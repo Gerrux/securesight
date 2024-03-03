@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="ad79da47-6833-47fb-b0dc-b8c95b0776a5" name="Changes" comment="Start project">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/securesight.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authapi/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authapi/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authapi/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authapi/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authapi/serializers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authapi/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authapi/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authapi/validations.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authapi/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/public/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/public/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/public/logo192.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/public/logo512.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/public/manifest.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/public/robots.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/Api.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/App.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/App.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/App.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/AppRoutes.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/Layout/Background.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/Sidebar.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/contexts/ContextProvider.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/data/themeColors.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/hooks/auth.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/pages/Login.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/pages/Main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/pages/Register.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/pages/Videos.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/styles/auth.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/styles/main.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/styles/sidebar.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/securesight/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/securesight/asgi.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/securesight/settings.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/securesight/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/securesight/wsgi.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/videoanalytics/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/videoanalytics/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/videoanalytics/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/videoanalytics/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/videoanalytics/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/videoanalytics/views.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+        <option value="JSX File" />
+        <option value="CSS File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="2d5vwAPqnmrej5NXWKIUjkp09n6" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/kalin/PycharmProjects/securesight/frontend/src/styles&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\PyCharm 2023.3.2\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\kalin\PycharmProjects\securesight\frontend\src\styles" />
+      <recent name="C:\Users\kalin\PycharmProjects\securesight\users" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\kalin\PycharmProjects\securesight\frontend\src" />
+      <recent name="C:\Users\kalin\PycharmProjects\securesight\authapi" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="securesight" type="Python.DjangoServer" factoryName="Django server">
+      <module name="securesight" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="localhost" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-50da183f06c8-2887949eec09-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-233.13135.95" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ad79da47-6833-47fb-b0dc-b8c95b0776a5" name="Changes" comment="" />
+      <created>1709310990059</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1709310990059</updated>
+      <workItem from="1709311009713" duration="681000" />
+      <workItem from="1709397207365" duration="2179000" />
+      <workItem from="1709400188961" duration="20715000" />
+      <workItem from="1709461744063" duration="16950000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Start project" />
+    <option name="LAST_COMMIT_MESSAGE" value="Start project" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/authapi/serializers.py</url>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
