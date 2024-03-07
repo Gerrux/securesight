@@ -1,19 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../hooks/auth';
-import client from '../Api';
-import { Container, Form, Button } from 'react-bootstrap'; // import react-bootstrap components
+import apiClient from '../Api';
+import { Form, Button, Alert } from 'react-bootstrap'; // import Alert component
 import Background from '../components/Layout/Background';
 import '../styles/auth.css';
+import Cookies from "js-cookie";
 
 const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
   const { login } = useAuth();
   const navigate = useNavigate();
 
   useEffect(() => {
-    const accessToken = localStorage.getItem('access_token');
+    const accessToken = Cookies.get('access');
     if (accessToken) {
       // User is already authenticated, navigate to the appropriate page
       navigate('/');
@@ -23,17 +25,15 @@ const Login = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await client.post('/api/login', {
+      const response = await apiClient.post('/api/login/', {
         username,
         password
       });
-      // сохраняем токены в локальное хранилище
-      localStorage.setItem('access_token', response.data.access);
-      localStorage.setItem('refresh_token', response.data.refresh);
-      login(response.data.user);
+      login(response);
       navigate('/');
     } catch (error) {
       console.error(error);
+      setError('Invalid username or password');
     }
   };
 
@@ -41,6 +41,7 @@ const Login = () => {
     <Background>
       <Form className="p-5 border-light rounded bg-glass card" onSubmit={handleSubmit}>
         <h2 className="text-center mb-4">Вход</h2>
+        {error && <Alert variant="danger">{error}</Alert>}
         <Form.Group controlId="username" className="mb-2">
           <Form.Label>Никнейм:</Form.Label>
           <Form.Control

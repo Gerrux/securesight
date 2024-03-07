@@ -1,3 +1,58 @@
 .main-container {
   margin: 0;
 }
+
+.main {
+  flex: 1;
+}
+
+.content-container {
+  position: relative;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.upload-form-container {
+  position: relative;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.fade-in {
+  animation: fade-in 0.5s ease-in-out forwards;
+}
+
+.fade-out {
+  animation: fade-out 0.5s ease-in-out forwards;
+}
+
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+
+
+
+.footer-dark {
+  background-color: #16181a;
+  color: #fff;
+}

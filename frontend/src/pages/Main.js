@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import { Route, Routes, useNavigate } from 'react-router-dom';
-import { Container, Row, Col, Button } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/main.css';
 import Sidebar from '../components/Sidebar';
 import { useStateContext } from '../contexts/ContextProvider';
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import VideoUploadForm from '../components/VideoUploadForm';
+import Dashboard from "../components/Dashboard";
+import client from '../Api';
 
 const Main = () => {
-
   const { setCurrentColor, setCurrentMode, currentMode, activeMenu, currentColor, themeSettings, setThemeSettings } = useStateContext();
 
   useEffect(() => {
@@ -19,11 +22,26 @@ const Main = () => {
     }
   }, []);
 
+  const [showForm, setShowForm] = useState(false);
+
+  const handleToggleForm = () => {
+    setShowForm(!showForm);
+  }
+
   return (
     <Container fluid className="d-flex vh-100 p-0">
-      <Sidebar handleLogout/>
-      <Container fluid className="main-container bg-light d-flex p-0">
-        <h1>Container</h1>
+      <Sidebar/>
+      <Container fluid className="main-container bg-light d-flex p-0 flex-column">
+        <Header handleToggleForm={handleToggleForm} showForm={showForm} />
+        <Container className="main d-flex flex-column align-items-center justify-content-center">
+          <div className={`dashboard-container ${showForm ? 'fade-out' : 'fade-in'}`}>
+            {!showForm && <Dashboard/>}
+          </div>
+          <div className={`upload-form-container ${showForm ? 'fade-in' : 'fade-out'}`}>
+            {showForm && <VideoUploadForm onClose={handleToggleForm} apiClient={client} />}
+          </div>
+        </Container>
+        <Footer/>
       </Container>
     </Container>
   );

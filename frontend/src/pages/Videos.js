@@ -5,6 +5,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/main.css';
 import Sidebar from '../components/Sidebar';
 import { useStateContext } from '../contexts/ContextProvider';
+import Header from "../components/Header";
+import client from '../Api';
 
 const Videos = () => {
 
@@ -22,7 +24,8 @@ const Videos = () => {
   return (
     <Container fluid className="d-flex vh-100 p-0">
       <Sidebar handleLogout/>
-      <Container fluid className="main-container bg-light d-flex p-0">
+      <Container fluid className="main-container bg-light d-flex p-0 flex-column">
+        <Header/>
         <h1>Videos</h1>
       </Container>
     </Container>

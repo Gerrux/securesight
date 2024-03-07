@@ -1,19 +1,21 @@
 import axios from 'axios';
+import { useAuth } from './hooks/auth';
+import Cookies from "js-cookie";
 
-axios.defaults.xsrfCookieName = 'csrftoken';
-axios.defaults.xsrfHeaderName = 'X-CSRFToken';
-axios.defaults.withCredentials = true;
-
-const client = axios.create({
-  baseURL: "http://127.0.0.1:8000"
+const apiClient = axios.create({
+  baseURL: 'http://localhost:8000/',
+  xsrfCookieName: 'csrftoken',
+  xsrfHeaderName: 'X-CSRFToken',
+  withCredentials: true,
 });
 
-client.interceptors.request.use(
+apiClient.interceptors.request.use(
   config => {
-    const token = localStorage.getItem('token');
+    const token = Cookies.get('token');
     if (token) {
       config.headers.Authorization = `Token ${token}`;
     }
+    config.headers['X-CSRFToken'] = Cookies.get('csrftoken');
     return config;
   },
   error => {
@@ -21,4 +23,4 @@ client.interceptors.request.use(
   }
 );
 
-export default client;
+export default apiClient;

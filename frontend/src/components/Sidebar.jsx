@@ -4,10 +4,12 @@ import { Nav, Navbar, FormCheck, Button } from 'react-bootstrap';
 import '../styles/sidebar.css';
 import { useNavigate } from 'react-router-dom';
 import { BiChevronsLeft, BiChevronsRight, BiHome, BiVideo, BiMovie, BiError, BiExit } from 'react-icons/bi';
+import { useAuth } from '../hooks/auth';
 
 const Sidebar = () => {
   const { activeMenu, setActiveMenu, currentMode, setCurrentMode} = useStateContext();
   const navigate = useNavigate();
+  const { logout } = useAuth();
 
   const handleToggle = () => {
     setActiveMenu(!activeMenu);
@@ -16,11 +18,8 @@ const Sidebar = () => {
   const handleModeSwitch = (event) => {
     setCurrentMode(currentMode === 'Light' ? 'Dark' : 'Light');
   };
-
   const handleLogout = () => {
-    localStorage.removeItem('access_token');
-    localStorage.removeItem('refresh_token');
-    navigate('/login');
+    logout();
   };
 
   return (
@@ -71,7 +70,7 @@ const Sidebar = () => {
             <span className={`nav-text ${!activeMenu && 'd-none'}`}>Выйти</span>
           </Nav.Link>
         </Nav.Item>
-        <Nav.Item>
+        <Nav.Item className='center'>
           <FormCheck className={` ${!activeMenu && 'd-none'}`}
             type="switch"
             id="custom-switch"

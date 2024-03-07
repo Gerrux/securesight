@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../hooks/auth';
-import client from '../Api';
-import { Container, Form, Button } from 'react-bootstrap'; // import react-bootstrap components
+import apiClient from '../Api';
+import { Form, Button } from 'react-bootstrap'; // import react-bootstrap components
 import Background from '../components/Layout/Background';
 import '../styles/auth.css';
+import Cookies from "js-cookie";
 
 const Register = () => {
   const [username, setUsername] = useState('');
@@ -16,20 +17,19 @@ const Register = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await client.post('/api/register', {
+      const response = await apiClient.post('/api/register/', {
         username,
         email,
         password
       });
-      localStorage.setItem('access_token', response.data.access);
-      localStorage.setItem('refresh_token', response.data.refresh);
-      login(response.data.user);
+      Cookies.set('access', response.data.access);
+      Cookies.set('refresh', response.data.refresh);
+      login(response.data);
       navigate('/');
     } catch (error) {
       console.error(error);
     }
   };
-
   return (
     <Background>
       <Form className="p-5 border-light rounded bg-white" onSubmit={handleSubmit}>

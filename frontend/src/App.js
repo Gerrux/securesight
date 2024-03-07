@@ -1,27 +1,18 @@
 import './App.css';
 import React from 'react';
-import axios from 'axios';
 import { BrowserRouter as Router} from 'react-router-dom';
 import AppRoutes from './AppRoutes';
-
-
-import { useStateContext } from './contexts/ContextProvider';
-
-const apiClient = axios.create({
-  baseURL: 'http://127.0.0.1:8000',
-  withCredentials: true,
-  xsrfCookieName: 'csrftoken',
-  xsrfHeaderName: 'X-CSRFToken',
-});
-
+import { AuthProvider } from './hooks/auth';
+import apiClient from "./Api";
 
 const App = () => {
-  const { setCurrentColor, setCurrentMode, currentMode, activeMenu, currentColor, themeSettings, setThemeSettings } = useStateContext();
-  return (
-    <Router>
-      <AppRoutes apiClient={apiClient} />
-    </Router>
-  );
+    return (
+        <Router>
+            <AuthProvider>
+                <AppRoutes apiClient={apiClient}/>
+            </AuthProvider>
+        </Router>
+    );
 };
 
 export default App;
