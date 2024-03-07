@@ -5,14 +5,22 @@ const StateContext = createContext();
 
 export const ContextProvider = ({ children }) => {
   const [screenSize, setScreenSize] = useState(undefined);
-  const [currentColor, setCurrentColor] = useState('#03C9D7');
-  const [currentMode, setCurrentMode] = useState('Dark');
-  const [themeSettings, setThemeSettings] = useState(false);
   const [activeMenu, setActiveMenu] = useState(true);
+  const [themeSettings, setThemeSettings] = useState(false);
 
-  const setMode = (e) => {
-    setCurrentMode(e.target.value);
-    localStorage.setItem('themeMode', e.target.value);
+  const [currentMode, setCurrentMode] = useState(() => {
+    const storedMode = localStorage.getItem('themeMode');
+    return storedMode ? storedMode : 'Light';
+  });
+
+  const [currentColor, setCurrentColor] = useState(() => {
+    const storedColor = localStorage.getItem('colorMode');
+    return storedColor ? storedColor : '#03C9D7';
+  });
+
+  const setMode = (mode) => {
+    setCurrentMode(mode);
+    localStorage.setItem('themeMode', mode);
   };
 
   const setColor = (color) => {

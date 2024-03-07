@@ -11,16 +11,14 @@ import Dashboard from "../components/Dashboard";
 import client from '../Api';
 
 const Main = () => {
-  const { setCurrentColor, setCurrentMode, currentMode, activeMenu, currentColor, themeSettings, setThemeSettings } = useStateContext();
+  const { setCurrentMode, currentMode} = useStateContext();
 
   useEffect(() => {
-    const currentThemeColor = localStorage.getItem('colorMode');
-    const currentThemeMode = localStorage.getItem('themeMode');
-    if (currentThemeColor && currentThemeMode) {
-      setCurrentColor(currentThemeColor);
+    const currentThemeMode = currentMode;
+    if (currentThemeMode) {
       setCurrentMode(currentThemeMode);
     }
-  }, []);
+  }, [setCurrentMode]);
 
   const [showForm, setShowForm] = useState(false);
 

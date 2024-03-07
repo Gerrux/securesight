@@ -7,7 +7,7 @@ import { BiChevronsLeft, BiChevronsRight, BiHome, BiVideo, BiMovie, BiError, BiE
 import { useAuth } from '../hooks/auth';
 
 const Sidebar = () => {
-  const { activeMenu, setActiveMenu, currentMode, setCurrentMode} = useStateContext();
+  const { activeMenu, setActiveMenu, currentMode, setCurrentMode, setMode} = useStateContext();
   const navigate = useNavigate();
   const { logout } = useAuth();
 
@@ -17,6 +17,7 @@ const Sidebar = () => {
 
   const handleModeSwitch = (event) => {
     setCurrentMode(currentMode === 'Light' ? 'Dark' : 'Light');
+    setMode(currentMode === 'Light' ? 'Dark' : 'Light');
   };
   const handleLogout = () => {
     logout();
