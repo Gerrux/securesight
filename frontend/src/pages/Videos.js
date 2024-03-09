@@ -1,17 +1,20 @@
 import React, { useEffect, useState } from 'react';
-import { Route, Routes, useNavigate } from 'react-router-dom';
-import { Container, Row, Col, Button } from 'react-bootstrap';
+import client from '../ApiClient';
+
+import { Header, Sidebar, VideoUploadForm, VideoList } from "../components";
+import { useStateContext } from '../contexts/ContextProvider';
+import { Container } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/main.css';
-import Sidebar from '../components/Sidebar';
-import { useStateContext } from '../contexts/ContextProvider';
-import Header from "../components/Header";
-import client from '../Api';
 
 const Videos = () => {
 
-  const { setCurrentColor, setCurrentMode, currentMode, activeMenu, currentColor, themeSettings, setThemeSettings } = useStateContext();
+  const { setCurrentColor, setCurrentMode, currentMode } = useStateContext();
+  const [showForm, setShowForm] = useState(false);
 
+  const handleToggleForm = () => {
+    setShowForm(!showForm);
+  }
   useEffect(() => {
     const currentThemeColor = localStorage.getItem('colorMode');
     const currentThemeMode = localStorage.getItem('themeMode');
@@ -22,11 +25,18 @@ const Videos = () => {
   }, []);
 
   return (
-    <Container fluid className="d-flex vh-100 p-0">
+    <Container fluid className={`d-flex vh-100 p-0 ${currentMode === 'Dark' ? 'main-dark' : ''}`}>
       <Sidebar handleLogout/>
-      <Container fluid className="main-container bg-light d-flex p-0 flex-column">
-        <Header/>
-        <h1>Videos</h1>
+      <Container fluid className="main-container d-flex p-0 flex-column">
+        <Header handleToggleForm={handleToggleForm} showForm={showForm} />
+        <Container className="main d-flex flex-column align-items-center justify-content-center">
+          <div className={`container ${showForm ? 'fade-out' : 'fade-in'}`}>
+            {!showForm && <VideoList/>}
+          </div>
+          <div className={`upload-form-container ${showForm ? 'fade-in' : 'fade-out'}`}>
+            {showForm && <VideoUploadForm onClose={handleToggleForm} apiClient={client} />}
+          </div>
+        </Container>
       </Container>
     </Container>
   );

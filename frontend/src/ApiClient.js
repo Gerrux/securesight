@@ -1,19 +1,19 @@
 import axios from 'axios';
-import { useAuth } from './hooks/auth';
+import { useAuth } from './hooks/AuthProvider';
 import Cookies from "js-cookie";
 
-const apiClient = axios.create({
+const ApiClient = axios.create({
   baseURL: 'http://localhost:8000/',
   xsrfCookieName: 'csrftoken',
   xsrfHeaderName: 'X-CSRFToken',
   withCredentials: true,
 });
 
-apiClient.interceptors.request.use(
+ApiClient.interceptors.request.use(
   config => {
-    const token = Cookies.get('token');
+    const token = Cookies.get('access');
     if (token) {
-      config.headers.Authorization = `Token ${token}`;
+      config.headers.Authorization = `Bearer ${token}`;
     }
     config.headers['X-CSRFToken'] = Cookies.get('csrftoken');
     return config;
@@ -23,4 +23,4 @@ apiClient.interceptors.request.use(
   }
 );
 
-export default apiClient;
+export default ApiClient;

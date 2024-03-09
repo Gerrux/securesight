@@ -4,7 +4,7 @@ import { Nav, Navbar, FormCheck, Button } from 'react-bootstrap';
 import '../styles/sidebar.css';
 import { useNavigate } from 'react-router-dom';
 import { BiChevronsLeft, BiChevronsRight, BiHome, BiVideo, BiMovie, BiError, BiExit } from 'react-icons/bi';
-import { useAuth } from '../hooks/auth';
+import { useAuth } from '../hooks/AuthProvider';
 
 const Sidebar = () => {
   const { activeMenu, setActiveMenu, currentMode, setCurrentMode, setMode} = useStateContext();
@@ -28,10 +28,6 @@ const Sidebar = () => {
       <Navbar.Brand className='top'>
         <span className={`logo-text ${!activeMenu && 'd-none'} ${currentMode === 'Dark' ? 'text-light' : 'text-dark'}`}>SecureSight</span>
       </Navbar.Brand>
-
-      <Button className="sidebar-toggle" onClick={handleToggle}>
-        {activeMenu ? <BiChevronsLeft /> : <BiChevronsRight />}
-      </Button>
       <Nav className="flex-column mt-4">
         {/* Add your sidebar content here, for example: */}
         <Nav.Item>

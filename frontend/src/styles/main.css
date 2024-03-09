@@ -1,5 +1,13 @@
-.main-container {
-  margin: 0;
+.main-dark {
+  background-color: #16181a;
+}
+
+.main-dark .main-container {
+  background-color: #16181a;
+}
+
+.main-dark .main {
+  color: #fff;
 }
 
 .main {

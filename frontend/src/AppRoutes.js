@@ -4,7 +4,9 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import Main from './pages/Main';
 import Videos from './pages/Videos';
-import {useAuth} from './hooks/auth';
+import VideoDetail from './pages/VideoDetail'
+import {useAuth} from './hooks/AuthProvider';
+
 
 const AppRoutes = ({ apiClient }) => {
   const { isAuthenticated } = useAuth();
@@ -25,6 +27,10 @@ const AppRoutes = ({ apiClient }) => {
     {
       path: '/videos',
       element: isAuthenticated ? <Videos/> : <Navigate to="/login" replace/>
+    },
+    {
+      path: '/watch/:slug',
+      element: isAuthenticated ? <VideoDetail/> : <Navigate to="/login" replace/> // Добавьте новый маршрут для VideoDetail
     }
   ]);
 };

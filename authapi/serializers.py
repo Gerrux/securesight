@@ -34,7 +34,7 @@ class UserRegisterSerializer(serializers.ModelSerializer):
     password = serializers.CharField(write_only=True, validators=[validate_password])
 
     class Meta:
-        model = get_user_model()
+        model = UserModel
         fields = ('email', 'username', 'password')
         extra_kwargs = {
             'email': {'validators': [validate_email]},
@@ -42,8 +42,9 @@ class UserRegisterSerializer(serializers.ModelSerializer):
         }
 
     def create(self, validated_data):
-        user = get_user_model().objects.create_user(**validated_data)
-        return user
+        user = UserModel.objects.create_user(**validated_data)
+        refresh = RefreshToken.for_user(user)
+        return {'user': UserSerializer(user).data, 'access': str(refresh.access_token), 'refresh': str(refresh)}
 
 
 class UserLoginSerializer(serializers.Serializer):

@@ -1,17 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import client from '../ApiClient';
+import { Header, Sidebar, Footer, Dashboard, VideoUploadForm } from "../components";
+import { useStateContext } from '../contexts/ContextProvider';
+import { Container } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/main.css';
-import Sidebar from '../components/Sidebar';
-import { useStateContext } from '../contexts/ContextProvider';
-import Header from "../components/Header";
-import Footer from "../components/Footer";
-import VideoUploadForm from '../components/VideoUploadForm';
-import Dashboard from "../components/Dashboard";
-import client from '../Api';
 
 const Main = () => {
-  const { setCurrentMode, currentMode} = useStateContext();
+  const { setCurrentMode, currentMode } = useStateContext();
 
   useEffect(() => {
     const currentThemeMode = currentMode;
@@ -29,9 +25,9 @@ const Main = () => {
   return (
     <Container fluid className="d-flex vh-100 p-0">
       <Sidebar/>
-      <Container fluid className="main-container bg-light d-flex p-0 flex-column">
+      <Container fluid className={`main-container d-flex p-0 flex-column ${currentMode === 'Dark' ? 'main-dark' : ''}`}>
         <Header handleToggleForm={handleToggleForm} showForm={showForm} />
-        <Container className="main d-flex flex-column align-items-center justify-content-center">
+        <Container className={`main d-flex flex-column align-items-center justify-content-center ${currentMode === 'Dark' ? 'main-dark' : ''}`}>
           <div className={`dashboard-container ${showForm ? 'fade-out' : 'fade-in'}`}>
             {!showForm && <Dashboard/>}
           </div>

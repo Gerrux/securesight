@@ -1,13 +1,18 @@
 import React, { useState } from 'react';
-import {Form, Button, FormControl, Row, Col, Toast, Container} from 'react-bootstrap';
+import {Form, Button, Row, Col, Toast, Container} from 'react-bootstrap';
+import ApiClient from '../ApiClient';
+import { useStateContext } from '../contexts/ContextProvider';
+import Cookies from "js-cookie";
+import '../styles/video_upload_form.css';
 
-const VideoUploadForm = ({ apiClient }) => {
+const VideoUploadForm = ({ onClose }) => {
+  const { currentMode } = useStateContext();
   const [selectedFile, setSelectedFile] = useState(null);
   const [title, setTitle] = useState('');
   const [previewUrl, setPreviewUrl] = useState(null);
   const [showToast, setShowToast] = useState(false);
   const [toastMessage, setToastMessage] = useState('');
-
+  
   const handleFileChange = (event) => {
     const file = event.target.files[0];
     setSelectedFile(file);
@@ -42,9 +47,11 @@ const VideoUploadForm = ({ apiClient }) => {
     const formData = new FormData();
     formData.append('file', selectedFile);
     formData.append('title', title);
-    apiClient.post('/videos/upload', formData, {
+
+    ApiClient.post('/videos/upload/', formData, { // используем ваш apiClient
       headers: {
-        'Content-Type': 'multipart/form-data'
+        'Content-Type': 'multipart/form-data',
+        'Authorization': `Bearer ${Cookies.get('access')}`
       }
     })
     .then(response => {
@@ -54,6 +61,9 @@ const VideoUploadForm = ({ apiClient }) => {
       setPreviewUrl(null);
       setToastMessage('Video uploaded successfully');
       setShowToast(true);
+      if (onClose) {
+        onClose();
+      }
     })
     .catch(error => {
       console.error(error);
@@ -63,24 +73,24 @@ const VideoUploadForm = ({ apiClient }) => {
   };
 
   return (
-    <Container>
+    <Container className={`video-upload-form ${currentMode === 'Dark' ? 'dark-mode' : ''}`}>
       <Form onSubmit={handleSubmit}>
         <Row className="mb-3">
           <Col>
-            <Form.Label htmlFor="title">Title</Form.Label>
+            <Form.Label htmlFor="title">Название</Form.Label>
             <Form.Control type="text" id="title" placeholder="Title" value={title} onChange={handleTitleChange} />
           </Col>
         </Row>
         <Row className="mb-3">
           <Col>
-            <Form.Label htmlFor="video">Video</Form.Label>
+            <Form.Label htmlFor="video">Видеоролик</Form.Label>
             <Form.Control type="file" id="video" onChange={handleFileChange} />
           </Col>
         </Row>
         {previewUrl && (
           <Row className="mb-3">
             <Col>
-              <img src={previewUrl} alt="Video Preview" />
+              <img src={previewUrl} alt="Video Preview" width="100%" height="auto"/>
             </Col>
           </Row>
         )}

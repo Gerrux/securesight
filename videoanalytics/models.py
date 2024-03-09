@@ -1,3 +1,6 @@
+import hashlib
+import uuid
+
 from django.conf import settings
 from django.core.files.base import ContentFile
 from django.db import models
@@ -21,19 +24,24 @@ class ContentTypeRestriction(object):
 
 
 class Video(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     title = models.CharField(max_length=100)
     file = models.FileField(upload_to='videos/')
     processed = models.BooleanField(default=False)
     uploaded_at = models.DateTimeField(auto_now_add=True)
     uploaded_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     thumbnail = models.ImageField(upload_to='thumbnails/', blank=True)
+    slug = models.CharField(max_length=10, unique=True)
 
     def save(self, *args, **kwargs):
+        if not self.slug:
+            hash_object = hashlib.sha1(self.file.read())
+            self.slug = hash_object.hexdigest()[:10]
         super().save(*args, **kwargs)
         if not self.thumbnail:
             # Generate thumbnail
             thumbnail = generate_thumbnail(self.file.path)
-            # Save thumbnail
-            self.thumbnail.save(f'{self.file.name}.jpg', thumbnail, save=False)
-        super().save(*args, **kwargs)
+            if thumbnail:
+                # Save thumbnail
+                self.thumbnail.save(f'{self.file.name}.jpg', ContentFile(thumbnail.getvalue()))
 

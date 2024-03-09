@@ -1,7 +1,7 @@
 import React, {useState, useEffect, useRef, useCallback} from 'react';
 import { useNavigate } from 'react-router-dom';
 import Cookies from 'js-cookie';
-import apiClient from "../Api";
+import ApiClient from "../ApiClient";
 
 const AuthContext = React.createContext();
 
@@ -14,15 +14,25 @@ export const AuthProvider = ({ children }) => {
     Cookies.set('access', response.data.access);
     Cookies.set('refresh', response.data.refresh);
     setIsAuthenticated(true);
-    apiClient.defaults.headers.common['Authorization'] = `Bearer ${response.data.access}`;
+    ApiClient.defaults.headers.common['Authorization'] = `Bearer ${response.data.access}`;
     navigate('/');
+  };
+
+  const register = async (username, email, password) => {
+    try {
+      const response = await ApiClient.post('/api/register/', { username, email, password });
+      login(response);
+    } catch (error) {
+      console.error('Error registering user:', error);
+      throw error;
+    }
   };
 
   const logout = useCallback(() => {
     Cookies.remove('access');
     Cookies.remove('refresh');
     setIsAuthenticated(false);
-    delete apiClient.defaults.headers.common['Authorization'];
+    delete ApiClient.defaults.headers.common['Authorization'];
     navigate('/login');
   }, [navigate]);
 
@@ -32,9 +42,9 @@ export const AuthProvider = ({ children }) => {
       const refreshToken = Cookies.get('refresh');
       if (accessToken && refreshToken && isMounted.current) {
         try {
-          await apiClient.post('/api/token/verify/', {token: accessToken});
+          await ApiClient.post('/api/token/verify/', {token: accessToken});
           setIsAuthenticated(true);
-          apiClient.defaults.headers.common['Authorization'] = `Bearer ${accessToken}`;
+          ApiClient.defaults.headers.common['Authorization'] = `Bearer ${accessToken}`;
         } catch (error) {
           console.error("Ошибка проверки токена:", error);
           logout();
@@ -50,7 +60,7 @@ export const AuthProvider = ({ children }) => {
   }, [navigate, logout]);
 
   return (
-    <AuthContext.Provider value={{ isAuthenticated, login, logout }}>
+    <AuthContext.Provider value={{ isAuthenticated, login, register, logout }}>
       {children}
     </AuthContext.Provider>
   );

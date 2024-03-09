@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import { useAuth } from '../hooks/auth';
-import apiClient from '../Api';
-import { Form, Button, Alert } from 'react-bootstrap'; // import Alert component
+import { useAuth } from '../hooks/AuthProvider';
+import ApiClient from '../ApiClient';
+import { Form, Button, Alert } from 'react-bootstrap';
 import Background from '../components/Layout/Background';
 import '../styles/auth.css';
 import Cookies from "js-cookie";
@@ -25,7 +25,7 @@ const Login = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await apiClient.post('/api/login/', {
+      const response = await ApiClient.post('/api/login/', {
         username,
         password
       });

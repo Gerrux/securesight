@@ -1,30 +1,21 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import { useAuth } from '../hooks/auth';
-import apiClient from '../Api';
-import { Form, Button } from 'react-bootstrap'; // import react-bootstrap components
+import { useAuth } from '../hooks/AuthProvider';
+import { Form, Button } from 'react-bootstrap';
 import Background from '../components/Layout/Background';
 import '../styles/auth.css';
-import Cookies from "js-cookie";
 
 const Register = () => {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const { login } = useAuth();
+  const { register } = useAuth();
   const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await apiClient.post('/api/register/', {
-        username,
-        email,
-        password
-      });
-      Cookies.set('access', response.data.access);
-      Cookies.set('refresh', response.data.refresh);
-      login(response.data);
+      await register(username, email, password);
       navigate('/');
     } catch (error) {
       console.error(error);
