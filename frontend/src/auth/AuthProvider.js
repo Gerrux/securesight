@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useRef, useCallback} from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Cookies from 'js-cookie';
 import ApiClient from "../ApiClient";
@@ -8,17 +8,16 @@ const AuthContext = React.createContext();
 export const AuthProvider = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const navigate = useNavigate();
-  const isMounted = useRef(true);
 
-  const login = async (response) => {
+  const login = useCallback(async (response) => {
     Cookies.set('access', response.data.access);
     Cookies.set('refresh', response.data.refresh);
     setIsAuthenticated(true);
     ApiClient.defaults.headers.common['Authorization'] = `Bearer ${response.data.access}`;
     navigate('/');
-  };
+  }, [navigate]);
 
-  const register = async (username, email, password) => {
+  const register = useCallback(async (username, email, password) => {
     try {
       const response = await ApiClient.post('/api/register/', { username, email, password });
       login(response);
@@ -26,7 +25,7 @@ export const AuthProvider = ({ children }) => {
       console.error('Error registering user:', error);
       throw error;
     }
-  };
+  }, [login]);
 
   const logout = useCallback(() => {
     Cookies.remove('access');
@@ -37,27 +36,28 @@ export const AuthProvider = ({ children }) => {
   }, [navigate]);
 
   useEffect(() => {
+    const accessToken = Cookies.get('access');
+    const refreshToken = Cookies.get('refresh');
+
+    if (accessToken && refreshToken) {
+      // Set the authorization header before verifying the token
+      ApiClient.defaults.headers.common['Authorization'] = `Bearer ${accessToken}`;
+      setIsAuthenticated(true);
+    }
+
     const verifyToken = async () => {
-      const accessToken = Cookies.get('access');
-      const refreshToken = Cookies.get('refresh');
-      if (accessToken && refreshToken && isMounted.current) {
+      if (accessToken && refreshToken) {
         try {
-          await ApiClient.post('/api/token/verify/', {token: accessToken});
-          setIsAuthenticated(true);
-          ApiClient.defaults.headers.common['Authorization'] = `Bearer ${accessToken}`;
+          await ApiClient.post('/api/token/verify/', { token: accessToken });
         } catch (error) {
-          console.error("Ошибка проверки токена:", error);
+          console.error("Error verifying token:", error);
           logout();
         }
       }
     };
 
     verifyToken();
-
-    return () => {
-      isMounted.current = false;
-    };
-  }, [navigate, logout]);
+  }, [login, logout]);
 
   return (
     <AuthContext.Provider value={{ isAuthenticated, login, register, logout }}>

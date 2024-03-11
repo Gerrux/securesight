@@ -1,8 +1,8 @@
 import './App.css';
 import React from 'react';
-import { BrowserRouter as Router} from 'react-router-dom';
-import AppRoutes from './AppRoutes';
-import { AuthProvider } from './hooks/AuthProvider';
+import {BrowserRouter as Router} from 'react-router-dom';
+import AppRoutes from './routes/AppRoutes';
+import {AuthProvider} from './auth/AuthProvider';
 import ApiClient from "./ApiClient";
 
 const App = () => {

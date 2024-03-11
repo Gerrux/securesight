@@ -1,78 +1,78 @@
 .video-upload-form {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 2rem;
-  border-radius: 0.5rem;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 0.5rem;
 }
 
 .video-upload-form .form-label {
-  font-weight: bold;
-  margin-bottom: 0.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
 }
 
 .video-upload-form .form-control {
-  border-radius: 0.25rem;
-  border-color: #ccc;
-  padding: 0.5rem;
+    border-radius: 0.25rem;
+    border-color: #ccc;
+    padding: 0.5rem;
 }
 
 .video-upload-form .form-control:focus {
-  box-shadow: none;
-  border-color: #66afe9;
+    box-shadow: none;
+    border-color: #66afe9;
 }
 
 .video-upload-form .btn-primary {
-  background-color: #007bff;
-  border-color: #007bff;
-  border-radius: 0.25rem;
-  font-weight: bold;
-  padding: 0.5rem 1rem;
-  margin-top: 1rem;
+    background-color: #007bff;
+    border-color: #007bff;
+    border-radius: 0.25rem;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    margin-top: 1rem;
 }
 
 .video-upload-form .btn-primary:hover {
-  background-color: #0069d9;
-  border-color: #0062cc;
+    background-color: #0069d9;
+    border-color: #0062cc;
 }
 
 .video-upload-form .toast {
-  position: fixed;
-  top: 15px;
-  right: 15px;
-  z-index: 1050;
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    z-index: 1050;
 }
 
 .dark-mode {
-  background-color: #16181a;
-  color: #fff;
+    background-color: #16181a;
+    color: #fff;
 }
 
 .dark-mode .form-control::placeholder {
-  color: #ccc;
+    color: #ccc;
 }
 
 .dark-mode .form-label {
-  color: #fff;
+    color: #fff;
 }
 
 .dark-mode .form-control {
-  background-color: #494c53;
-  color: #fff;
-  border-color: #6c757d;
+    background-color: #494c53;
+    color: #fff;
+    border-color: #6c757d;
 }
 
 .dark-mode .form-control:focus {
-  border-color: #fff;
+    border-color: #fff;
 }
 
 .dark-mode .btn-primary {
-  background-color: #fff;
-  border-color: #fff;
-  color: #007bff;
+    background-color: #fff;
+    border-color: #fff;
+    color: #007bff;
 }
 
 .dark-mode .btn-primary:hover {
-  background-color: #e9ecef;
-  border-color: #e9ecef;
-  color: #007bff;
+    background-color: #e9ecef;
+    border-color: #e9ecef;
+    color: #007bff;
 }

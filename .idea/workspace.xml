@@ -1,79 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="ANALYZE_INJECTED_CODE" value="false" />
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ad79da47-6833-47fb-b0dc-b8c95b0776a5" name="Changes" comment="Start project">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/securesight.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authapi/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authapi/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authapi/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authapi/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authapi/serializers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authapi/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authapi/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authapi/validations.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authapi/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/public/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/public/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/public/logo192.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/public/logo512.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/public/manifest.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/public/robots.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/Api.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/App.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/App.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/App.test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/AppRoutes.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/Layout/Background.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/Sidebar.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/contexts/ContextProvider.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/data/themeColors.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/hooks/auth.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/pages/Login.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/pages/Main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/pages/Register.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/pages/Videos.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/styles/auth.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/styles/main.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/styles/sidebar.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/securesight/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/securesight/asgi.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/securesight/settings.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/securesight/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/securesight/wsgi.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/videoanalytics/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/videoanalytics/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/videoanalytics/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/videoanalytics/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/videoanalytics/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/videoanalytics/views.py" afterDir="false" />
+    <list default="true" id="ad79da47-6833-47fb-b0dc-b8c95b0776a5" name="Changes" comment="Added Video List and system upload videos">
+      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/auth/AuthProvider.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/routes/AppRoutes.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/routes/PrivateRoute.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/styles/video_detail.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/securesight/celery.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/videoanalytics/tasks.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/securesight.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/securesight.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authapi/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/authapi/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authapi/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/authapi/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authapi/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/authapi/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authapi/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/authapi/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authapi/validations.py" beforeDir="false" afterPath="$PROJECT_DIR$/authapi/validations.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authapi/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/authapi/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/ApiClient.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/ApiClient.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/App.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/AppRoutes.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Dashboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Dashboard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Footer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Footer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Header.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Layout/Background.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Layout/Background.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Sidebar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Sidebar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/VideoList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/VideoList.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/VideoUploadForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/VideoUploadForm.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/contexts/ContextProvider.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/contexts/ContextProvider.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/data/themeColors.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/data/themeColors.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/hooks/AuthProvider.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Main.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Register.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Register.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/VideoDetail.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/VideoDetail.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Videos.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Videos.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/styles/auth.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/styles/auth.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/styles/dashboard.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/styles/dashboard.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/styles/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/styles/header.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/styles/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/styles/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/styles/sidebar.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/styles/sidebar.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/styles/video_list.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/styles/video_list.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/styles/video_upload_form.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/styles/video_upload_form.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/securesight/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/securesight/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/securesight/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/securesight/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/videoanalytics/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/videoanalytics/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/videoanalytics/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/videoanalytics/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/videoanalytics/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/videoanalytics/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/videoanalytics/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/videoanalytics/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/videoanalytics/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/videoanalytics/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/videoanalytics/utils/generate_thumbnail.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/videoanalytics/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/videoanalytics/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="JSX File" />
-        <option value="CSS File" />
+        <option value="Python Script" />
+        <option value="Dockerfile" />
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -82,6 +91,9 @@
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
@@ -92,34 +104,41 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/kalin/PycharmProjects/securesight/frontend/src/styles&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\PyCharm 2023.3.2\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Django Server.securesight.executor": "Run",
+    "Docker.Dockerfile.executor": "Run",
+    "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Users/kalin/PycharmProjects/securesight/frontend/src/styles",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "run.code.analysis.last.selected.profile": "aDefault",
+    "settings.editor.selected.configurable": "settings.space",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\PyCharm 2023.3.2\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\kalin\PycharmProjects\securesight\frontend\src\styles" />
       <recent name="C:\Users\kalin\PycharmProjects\securesight\users" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\kalin\PycharmProjects\securesight\frontend\src\routes" />
       <recent name="C:\Users\kalin\PycharmProjects\securesight\frontend\src" />
-      <recent name="C:\Users\kalin\PycharmProjects\securesight\authapi" />
+      <recent name="C:\Users\kalin\PycharmProjects\securesight\securesight" />
+      <recent name="C:\Users\kalin\PycharmProjects\securesight\media" />
+      <recent name="C:\Users\kalin\PycharmProjects\securesight\frontend" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Docker.Dockerfile">
     <configuration name="securesight" type="Python.DjangoServer" factoryName="Django server">
       <module name="securesight" />
       <option name="ENV_FILES" value="" />
@@ -127,6 +146,7 @@
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="securesight.settings" />
       </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="" />
@@ -144,6 +164,36 @@
       <option name="customRunCommand" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="Dockerfile" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
+      <deployment type="dockerfile">
+        <settings>
+          <option name="imageTag" value="gerrux" />
+          <option name="containerName" value="securesight_backend" />
+          <option name="portBindings">
+            <list>
+              <DockerPortBindingImpl>
+                <option name="containerPort" value="8000" />
+                <option name="hostIp" value="0.0.0.0" />
+                <option name="hostPort" value="8000" />
+              </DockerPortBindingImpl>
+            </list>
+          </option>
+          <option name="sourceFilePath" value="Dockerfile" />
+        </settings>
+      </deployment>
+      <method v="2">
+        <option name="RunConfigurationTask" enabled="true" run_configuration_name="securesight" run_configuration_type="Python.DjangoServer" />
+      </method>
+    </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="dockerfile" temporary="true">
+      <deployment type="dockerfile" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Docker.Dockerfile" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -163,23 +213,80 @@
       <workItem from="1709311009713" duration="681000" />
       <workItem from="1709397207365" duration="2179000" />
       <workItem from="1709400188961" duration="20715000" />
-      <workItem from="1709461744063" duration="16950000" />
+      <workItem from="1709461744063" duration="17269000" />
+      <workItem from="1709541712228" duration="11152000" />
+      <workItem from="1709714069968" duration="4455000" />
+      <workItem from="1709721120074" duration="8309000" />
+      <workItem from="1709818114431" duration="22875000" />
+      <workItem from="1709976424677" duration="13341000" />
+      <workItem from="1710075852951" duration="31709000" />
     </task>
+    <task id="LOCAL-00001" summary="Start project">
+      <option name="closed" value="true" />
+      <created>1709509887204</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1709509887204</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Complete rework of the authorization system">
+      <option name="closed" value="true" />
+      <created>1709843971140</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1709843971140</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Fixed themeMode bug">
+      <option name="closed" value="true" />
+      <created>1709845335305</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1709845335305</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Added Video List and system upload videos">
+      <option name="closed" value="true" />
+      <created>1709983089025</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1709983089025</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Start project" />
-    <option name="LAST_COMMIT_MESSAGE" value="Start project" />
+    <MESSAGE value="Complete rework of the authorization system" />
+    <MESSAGE value="Fixed themeMode bug" />
+    <MESSAGE value="Added Video List and system upload videos" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Video List and system upload videos" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/authapi/serializers.py</url>
-          <option name="timeStamp" value="1" />
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/frontend/src/components/VideoUploadForm.jsx</url>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/frontend/src/App.js</url>
+          <option name="timeStamp" value="10" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

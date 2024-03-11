@@ -1,28 +1,28 @@
 .header-dark {
-  background-color: #16181a;
-  color: #fff;
+    background-color: #16181a;
+    color: #fff;
 }
 
 .button-text {
-  transition: transform 0.3s ease-out;
+    transition: transform 0.3s ease-out;
 }
 
 .upload-btn {
-  transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
 }
 
 .upload-btn span {
-  transition: all 0.3s ease-in-out;
-  transform: translateX(0);
+    transition: all 0.3s ease-in-out;
+    transform: translateX(0);
 }
 
 .close-btn {
-  transition: all 0.3s ease-in-out;
-  transform: scale(0.9);
+    transition: all 0.3s ease-in-out;
+    transform: scale(0.9);
 }
 
 .close-btn span {
-  transition: all 0.3s ease-in-out;
-  transform: translateX(-10px);
+    transition: all 0.3s ease-in-out;
+    transform: translateX(-10px);
 }
 

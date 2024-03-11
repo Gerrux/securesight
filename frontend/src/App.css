@@ -1,56 +1,56 @@
 .sidebar {
-  height: 100vh; /* Full height */
-  width: 100%; /* Default width */
-  transition: width 0.3s ease;
+    height: 100vh; /* Full height */
+    width: 100%; /* Default width */
+    transition: width 0.3s ease;
 }
 
 .sidebar.active {
-  width: 60px; /* Collapsed width */
+    width: 60px; /* Collapsed width */
 }
 
 .sidebar-dark {
-  background-color: #343a40; /* Dark background color */
-  color: #ffffff; /* Light text color */
+    background-color: #343a40; /* Dark background color */
+    color: #ffffff; /* Light text color */
 }
 
 .sidebar-dark .nav-link {
-  color: #cccccc; /* Light link color */
+    color: #cccccc; /* Light link color */
 }
 
 .sidebar-dark .nav-link:hover {
-  color: #ffffff; /* Light link color on hover */
+    color: #ffffff; /* Light link color on hover */
 }
 
 
 .App {
-  text-align: center;
+    text-align: center;
 }
 
 .App-logo {
-  height: 40vmin;
-  pointer-events: none;
+    height: 40vmin;
+    pointer-events: none;
 }
 
 /* boostrap form style */
 
 .form-inline {
-  width: 100%;
+    width: 100%;
 }
 
 .form-group {
-  width: 90%;
+    width: 90%;
 }
 
 .input-group {
-  width: 90% !important;
+    width: 90% !important;
 }
 
 .form-control {
-  width: 80% !important;
+    width: 80% !important;
 }
 
 span.input-group-addon {
-  width: 50px !important;
+    width: 50px !important;
 }
 
 .center {
@@ -61,5 +61,5 @@ span.input-group-addon {
 }
 
 .auth-background {
-  background: linear-gradient(to right, #ff9966, #ff5e62);
+    background: linear-gradient(to right, #ff9966, #ff5e62);
 }
