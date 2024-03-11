@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import ApiClient from '../ApiClient';
 import {Button, Card, Col, ListGroup, Modal, Row, Spinner} from 'react-bootstrap';
-import {FaCheckCircle, FaPlayCircle, FaTrashAlt} from 'react-icons/fa';
+import {FaCheckCircle, FaSyncAlt, FaTrashAlt} from 'react-icons/fa';
 import '../styles/video_list.css';
 
 const VideoList = () => {
@@ -112,10 +112,10 @@ const VideoList = () => {
                                                 {video.processed ? (
                                                     <FaCheckCircle className="mr-2" color="green"/>
                                                 ) : (
-                                                    <FaPlayCircle className="mr-2"
+                                                    <FaSyncAlt className="mr-2" color="orange"
                                                                   onClick={() => handleStartProcessing(video.slug)}/>
                                                 )}
-                                                Processed
+                                                <span className='d-block mx-2'>Processed</span>
                                             </ListGroup.Item>
                                             <ListGroup.Item className="text-center video-list-uploaded-at">
                                                 Загружено: {formatDate(video.uploaded_at)}

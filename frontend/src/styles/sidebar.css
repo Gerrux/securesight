@@ -7,6 +7,20 @@
     border-right: 1px solid lightgray;
 }
 
+.logo-text-sidebar{
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.logo-svg-sidebar{
+  width: 32px;
+  height: auto;
+  margin-left: 20px;
+  margin-right: 10px;
+}
+
 .sidebar.active {
     width: 200px;
 }

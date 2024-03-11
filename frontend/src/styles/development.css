@@ -1,0 +1,36 @@
+.under-construction-card {
+  animation: fade-in 0.5s ease-in-out forwards;
+  background-color: #f8f9fa;
+  border-color: #e3e7eb;
+  padding-top: 25px;
+}
+
+.under-construction-card-dark {
+  background-color: #4b5563;
+  border-color: #6b7280;
+}
+
+.under-construction-icon {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.under-construction-title {
+  font-size: 1.75rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.under-construction-text {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

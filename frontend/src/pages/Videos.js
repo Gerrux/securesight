@@ -29,8 +29,8 @@ const Videos = () => {
             <Container fluid className="main-container d-flex p-0 flex-column">
                 <Header handleToggleForm={handleToggleForm} showForm={showForm}/>
                 <Container className="main d-flex flex-column align-items-center justify-content-center">
-                    <div className={`container ${showForm ? 'fade-out' : 'fade-in'}`}>
-                        <VideoList/>
+                    <div className={`container ${showForm ? 'fade-out' : 'fade-in'} ${showForm ? 'd-none' : ''}`}>
+                        <VideoList />
                     </div>
                     <div className={`upload-form-container ${showForm ? 'fade-in' : 'fade-out'}`}>
                         {showForm && <VideoUploadForm onClose={handleToggleForm} apiClient={client}/>}

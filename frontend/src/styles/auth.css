@@ -61,6 +61,11 @@ body {
     mix-blend-mode: difference;
 }
 
+.dark {
+    background-color: #16181a;
+    z-index: -10;
+}
+
 .dark .jumbo {
     background-image: var(--stripesDark), var(--rainbow);
     filter: blur(10px) opacity(50%) saturate(200%);
@@ -68,4 +73,19 @@ body {
 
 .dark .jumbo::after {
     background-image: var(--stripesDark), var(--rainbow);
+}
+
+
+.logo {
+  width: 60px;
+  height: auto;
+  fill: currentColor;
+  margin-bottom: 0.25em;
+}
+
+.logo-text {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  margin-top: 0;
 }

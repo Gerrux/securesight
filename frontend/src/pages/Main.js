@@ -29,7 +29,7 @@ const Main = () => {
                 <Header handleToggleForm={handleToggleForm} showForm={showForm}/>
                 <Container
                     className={`main d-flex flex-column align-items-center justify-content-center ${currentMode === 'Dark' ? 'main-dark' : ''}`}>
-                    <div className={`dashboard-container ${showForm ? 'fade-out' : 'fade-in'}`}>
+                    <div className={`dashboard-container ${showForm ? 'fade-out' : 'fade-in'} ${showForm ? 'd-none' : ''}`}>
                         {!showForm && <Dashboard/>}
                     </div>
                     <div className={`upload-form-container ${showForm ? 'fade-in' : 'fade-out'}`}>

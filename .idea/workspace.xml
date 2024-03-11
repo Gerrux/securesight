@@ -7,65 +7,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ad79da47-6833-47fb-b0dc-b8c95b0776a5" name="Changes" comment="Added Video List and system upload videos">
-      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/auth/AuthProvider.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/routes/AppRoutes.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/routes/PrivateRoute.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/styles/video_detail.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/securesight/celery.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/videoanalytics/tasks.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/securesight.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/securesight.iml" afterDir="false" />
+    <list default="true" id="ad79da47-6833-47fb-b0dc-b8c95b0776a5" name="Changes" comment="Added video player">
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/images/logo_dark.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/images/logo_light.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/pages/Clips.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/styles/development.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authapi/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/authapi/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authapi/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/authapi/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authapi/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/authapi/tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authapi/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/authapi/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authapi/validations.py" beforeDir="false" afterPath="$PROJECT_DIR$/authapi/validations.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authapi/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/authapi/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/ApiClient.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/ApiClient.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/App.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/AppRoutes.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/Dashboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Dashboard.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/Footer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Footer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Header.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/public/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/favicon.ico" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/Layout/Background.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Layout/Background.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/Sidebar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Sidebar.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/VideoList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/VideoList.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/VideoUploadForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/VideoUploadForm.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/contexts/ContextProvider.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/contexts/ContextProvider.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/data/themeColors.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/data/themeColors.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/hooks/AuthProvider.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/pages/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Login.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/pages/Main.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/pages/Register.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Register.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/pages/VideoDetail.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/VideoDetail.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/pages/Videos.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Videos.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/routes/AppRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/routes/AppRoutes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/styles/auth.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/styles/auth.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/styles/dashboard.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/styles/dashboard.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/styles/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/styles/header.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/styles/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/styles/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/styles/sidebar.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/styles/sidebar.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/styles/video_list.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/styles/video_list.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/styles/video_upload_form.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/styles/video_upload_form.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/securesight/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/securesight/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/securesight/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/securesight/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/videoanalytics/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/videoanalytics/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/videoanalytics/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/videoanalytics/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/videoanalytics/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/videoanalytics/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/videoanalytics/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/videoanalytics/tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/videoanalytics/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/videoanalytics/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/videoanalytics/utils/generate_thumbnail.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/videoanalytics/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/videoanalytics/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/styles/video_detail.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/styles/video_detail.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,38 +64,38 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Django Server.securesight.executor": "Run",
-    "Docker.Dockerfile.executor": "Run",
-    "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/kalin/PycharmProjects/securesight/frontend/src/styles",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "run.code.analysis.last.selected.profile": "aDefault",
-    "settings.editor.selected.configurable": "settings.space",
-    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\PyCharm 2023.3.2\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Django Server.securesight.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.Dockerfile.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/kalin/PycharmProjects/securesight/frontend/src/styles&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;aDefault&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.space&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\PyCharm 2023.3.2\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\kalin\PycharmProjects\securesight\frontend\src\styles" />
       <recent name="C:\Users\kalin\PycharmProjects\securesight\users" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\kalin\PycharmProjects\securesight\frontend\src\assets\images" />
+      <recent name="C:\Users\kalin\PycharmProjects\securesight\frontend\public" />
       <recent name="C:\Users\kalin\PycharmProjects\securesight\frontend\src\routes" />
       <recent name="C:\Users\kalin\PycharmProjects\securesight\frontend\src" />
       <recent name="C:\Users\kalin\PycharmProjects\securesight\securesight" />
-      <recent name="C:\Users\kalin\PycharmProjects\securesight\media" />
-      <recent name="C:\Users\kalin\PycharmProjects\securesight\frontend" />
     </key>
   </component>
   <component name="RunManager" selected="Docker.Dockerfile">
@@ -186,7 +146,9 @@
       </method>
     </configuration>
     <configuration default="true" type="docker-deploy" factoryName="dockerfile" temporary="true">
-      <deployment type="dockerfile" />
+      <deployment type="dockerfile">
+        <settings />
+      </deployment>
       <method v="2" />
     </configuration>
     <recent_temporary>
@@ -219,7 +181,8 @@
       <workItem from="1709721120074" duration="8309000" />
       <workItem from="1709818114431" duration="22875000" />
       <workItem from="1709976424677" duration="13341000" />
-      <workItem from="1710075852951" duration="31709000" />
+      <workItem from="1710075852951" duration="35303000" />
+      <workItem from="1710183930270" duration="5975000" />
     </task>
     <task id="LOCAL-00001" summary="Start project">
       <option name="closed" value="true" />
@@ -253,7 +216,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709983089025</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Added video player">
+      <option name="closed" value="true" />
+      <created>1710163745687</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1710163745687</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -275,7 +246,8 @@
     <MESSAGE value="Complete rework of the authorization system" />
     <MESSAGE value="Fixed themeMode bug" />
     <MESSAGE value="Added Video List and system upload videos" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Video List and system upload videos" />
+    <MESSAGE value="Added video player" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added video player" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

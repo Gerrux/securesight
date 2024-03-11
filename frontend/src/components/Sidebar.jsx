@@ -2,6 +2,8 @@ import React from 'react';
 import {useStateContext} from '../contexts/ContextProvider';
 import {FormCheck, Nav, Navbar} from 'react-bootstrap';
 import {useNavigate} from 'react-router-dom';
+import { ReactComponent as LogoLightSvg } from '../assets/images/logo_dark.svg';
+import { ReactComponent as LogoDarkSvg } from '../assets/images/logo_light.svg';
 import {BiChevronsLeft, BiChevronsRight, BiError, BiExit, BiHome, BiMovie, BiVideo} from 'react-icons/bi';
 import {useAuth} from '../auth/AuthProvider';
 import '../styles/sidebar.css';
@@ -26,9 +28,9 @@ const Sidebar = () => {
 
     return (
         <Navbar className={`sidebar ${activeMenu ? 'active' : ''} ${currentMode === 'Dark' ? 'sidebar-dark' : ''}`}>
-            <Navbar.Brand className='top'>
-                <span
-                    className={`logo-text ${!activeMenu && 'd-none'} ${currentMode === 'Dark' ? 'text-light' : 'text-dark'}`}>SecureSight</span>
+            <Navbar.Brand className='top d-flex align-items-center'>
+              {currentMode === 'Light' ? <LogoDarkSvg className='logo-svg-sidebar' /> : <LogoLightSvg className='logo-svg-sidebar' />}
+              <span className={`logo-text-sidebar ${!activeMenu && 'd-none'} ${currentMode === 'Dark' ? 'text-light' : 'text-dark'}`}>SecureSight</span>
             </Navbar.Brand>
 
             <Nav className="flex-column mt-4">
