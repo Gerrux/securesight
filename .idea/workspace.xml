@@ -7,88 +7,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ad79da47-6833-47fb-b0dc-b8c95b0776a5" name="Changes" comment="Updating component styles. Added a logo and a page in development">
-      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/nginx.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/Log.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/pages/Incidents.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/styles/log.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice/app/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice/app/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice/app/routes.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice/app/src/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice/app/src/_init_paths.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice/app/src/configs/infer_trtpose_deepsort_dnn.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice/app/src/lib/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice/app/src/lib/action_classifier/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice/app/src/lib/action_classifier/dnn/classifier.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice/app/src/lib/action_classifier/dnn/feature_procs.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice/app/src/lib/pose_estimation/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice/app/src/lib/pose_estimation/trtpose/trtpose.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice/app/src/lib/tracker/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice/app/src/lib/tracker/deepsort/datasets/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice/app/src/lib/tracker/deepsort/datasets/basedataset.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice/app/src/lib/tracker/deepsort/datasets/market.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice/app/src/lib/tracker/deepsort/datasets/siamese_triplet.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice/app/src/lib/tracker/deepsort/deepsort.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice/app/src/lib/tracker/deepsort/get_reid.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice/app/src/lib/tracker/deepsort/models/mudeep.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice/app/src/lib/tracker/deepsort/models/osnet.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice/app/src/lib/tracker/deepsort/models/siamese_net.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice/app/src/lib/tracker/deepsort/models/wide_resnet.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice/app/src/lib/tracker/deepsort/reid_feature_extractor.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice/app/src/lib/tracker/deepsort/sort/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice/app/src/lib/tracker/deepsort/sort/detection.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice/app/src/lib/tracker/deepsort/sort/iou_matching.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice/app/src/lib/tracker/deepsort/sort/kalman_filter.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice/app/src/lib/tracker/deepsort/sort/linear_assignment.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice/app/src/lib/tracker/deepsort/sort/nn_matching.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice/app/src/lib/tracker/deepsort/sort/track.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice/app/src/lib/tracker/deepsort/sort/tracker.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice/app/src/lib/tracker/deepsort/tracker_utils.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice/app/src/lib/tracker/loss.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice/app/src/lib/tracker/runner.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice/app/src/lib/tracker/trainer.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice/app/src/lib/utils/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice/app/src/lib/utils/annotation.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice/app/src/lib/utils/commons.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice/app/src/lib/utils/config.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice/app/src/lib/utils/drawer.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice/app/src/lib/utils/rosbag_reader.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice/app/src/lib/utils/skeletons_io.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice/app/src/lib/utils/utils.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice/app/src/lib/utils/video.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice/app/src/video_processing.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice/app/src/weights/classifier/dnn/action_classifier3.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice/app/src/weights/classifier/dnn/pca.pkl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice/app/src/weights/pose_estimation/trtpose/.gitkeep" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice/app/src/weights/pose_estimation/trtpose/densenet121_baseline_att_256x256_B_epoch_160_256x256.trt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice/app/src/weights/tracker/deepsort/.gitkeep" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice/app/src/weights/tracker/deepsort/siamese_mars.onnx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice/app/src/weights/tracker/deepsort/siamese_mars.pth" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice/app/src/weights/tracker/deepsort/siamese_mars.trt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authapi/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/authapi/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authapi/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/authapi/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/Dashboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Dashboard.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/VideoList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/VideoList.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/VideoUploadForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/VideoUploadForm.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/VideoDetail.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/VideoDetail.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/routes/AppRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/routes/AppRoutes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/securesight/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/securesight/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/videoanalytics/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/videoanalytics/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/videoanalytics/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/videoanalytics/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/videoanalytics/tasks.py" beforeDir="false" afterPath="$PROJECT_DIR$/videoanalytics/tasks.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/videoanalytics/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/videoanalytics/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/videoanalytics/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/videoanalytics/views.py" afterDir="false" />
-    </list>
+    <list default="true" id="ad79da47-6833-47fb-b0dc-b8c95b0776a5" name="Changes" comment="Release v0.1. Added microservice with Action Recognition" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -251,7 +170,7 @@
       <workItem from="1710230269896" duration="1503000" />
       <workItem from="1710235527146" duration="3521000" />
       <workItem from="1710319937228" duration="3214000" />
-      <workItem from="1710368219732" duration="16671000" />
+      <workItem from="1710368219732" duration="18079000" />
     </task>
     <task id="LOCAL-00001" summary="Start project">
       <option name="closed" value="true" />
@@ -301,7 +220,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710190242750</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Release v0.1. Added microservice with Action Recognition">
+      <option name="closed" value="true" />
+      <created>1710396045907</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1710396045907</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -325,7 +252,8 @@
     <MESSAGE value="Added Video List and system upload videos" />
     <MESSAGE value="Added video player" />
     <MESSAGE value="Updating component styles. Added a logo and a page in development" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updating component styles. Added a logo and a page in development" />
+    <MESSAGE value="Release v0.1. Added microservice with Action Recognition" />
+    <option name="LAST_COMMIT_MESSAGE" value="Release v0.1. Added microservice with Action Recognition" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
