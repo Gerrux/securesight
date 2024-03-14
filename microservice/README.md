@@ -27,6 +27,7 @@
 | Pose Estimation + Tracking + Action | densenet121 + deepsort `siamese` reid + dnn | (256x256) + (256x128) + (--) | 21 fps | 33 fps |
 | Pose Estimation + Tracking + Action | densenet121 + deepsort `wideresnet` reid + dnn | (256x256) + (256x128) + (--) | 21 fps | 30 fps|
 
+Обучающий датасет классификатора действий [здесь](https://drive.google.com/open?id=1V8rQ5QR5q5zn1NHJhhf-6xIeDdXVtYs9).
 
 ## Основные особенности
 Быстрая и точная обработка видеопотоков благодаря **TensorRT** и **CUDA**
