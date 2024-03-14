@@ -3,12 +3,12 @@ import { useParams } from 'react-router-dom';
 import ApiClient from '../ApiClient';
 import ReactPlayer from 'react-player';
 import { Container, Row, Col, Dropdown } from 'react-bootstrap';
-import { Footer, Sidebar } from "../components";
+import {Footer, Log, Sidebar} from "../components";
 import { useStateContext } from "../contexts/ContextProvider";
 import '../styles/video_detail.css';
 
 const VideoDetail = () => {
-  const { setCurrentMode, currentMode } = useStateContext();
+  const { currentMode } = useStateContext();
   const { slug } = useParams();
   const [video, setVideo] = useState(null);
   const [hlsManifestUrl, setHlsManifestUrl] = useState(null);
@@ -69,14 +69,12 @@ const VideoDetail = () => {
                         }}
                       />
                     ) : (
-                      <div>Loading video...</div>
+                      <div>Загрузка видео...</div>
                     )}
                   </div>
                 </Col>
-                <Col md={3} className="d-flex justify-content-center align-items-center bg-primary rounded mb-3">
-                  <div>
-                    <h2>LOG</h2>
-                  </div>
+                <Col md={3} className="d-flex justify-content-center rounded mb-3 p-0">
+                  {video && video.log && video.log.length > 0 && <Log log={video.log} videoRef={playerRef} />}
                 </Col>
               </Row>
               <Row>
@@ -104,8 +102,8 @@ const VideoDetail = () => {
               </Row>
               <Row className="info">
                 <Col>
-                  <p>Uploaded by: {video.uploaded_by}</p>
-                  <p>Uploaded at: {new Date(video.uploaded_at).toLocaleString()}</p>
+                  <p>Загружено кем: {video.uploaded_by}</p>
+                  <p>Время загрузки: {new Date(video.uploaded_at).toLocaleString()}</p>
                 </Col>
               </Row>
             </>
@@ -118,5 +116,5 @@ const VideoDetail = () => {
     </Container>
   );
 };
-
 export default VideoDetail;
+

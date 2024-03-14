@@ -1,17 +1,44 @@
+import json
 import os
 
 from celery.result import AsyncResult
 from django.conf import settings
+import requests
+from django.core.files.base import ContentFile
 from django.http import HttpResponse, Http404
 from rest_framework import status
 from rest_framework.parsers import MultiPartParser, FormParser
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework_simplejwt.authentication import JWTAuthentication
-
+from .tasks import send_video_to_fastapi, convert_video_to_hls
 from .models import Video
 from .serializers import VideoSerializer, VideoListSerializer
+
+
+class TotalVideosView(APIView):
+    authentication_classes = [JWTAuthentication]
+    permission_classes = [IsAuthenticated]
+    def get(self, request):
+        total_videos = Video.objects.count()
+        return Response({'total_videos': total_videos})
+
+
+class TotalProcessedVideosView(APIView):
+    authentication_classes = [JWTAuthentication]
+    permission_classes = [IsAuthenticated]
+    def get(self, request):
+        total_processed_videos = Video.objects.filter(processed=True).count()
+        return Response({'total_processed_videos': total_processed_videos})
+
+
+class TotalAIProcessedVideosView(APIView):
+    authentication_classes = [JWTAuthentication]
+    permission_classes = [IsAuthenticated]
+    def get(self, request):
+        total_ai_processed_videos = Video.objects.filter(ai_processed=True).count()
+        return Response({'total_ai_processed_videos': total_ai_processed_videos})
 
 
 class VideoUploadView(APIView):
@@ -98,3 +125,17 @@ class VideoTaskStatusView(APIView):
             return Response(response_data)
         except AsyncResult.NotRegistered:
             raise Http404('Task not found')
+
+
+class SendVideoToAIAPIView(APIView):
+    parser_classes = [MultiPartParser, FormParser]
+    authentication_classes = [JWTAuthentication]
+    permission_classes = [IsAuthenticated]
+
+    def post(self, request, slug, format=None):
+        video_id = Video.objects.get(slug=slug).id
+
+        # Call the Celery task to send the video to the FastAPI backend
+        task = send_video_to_fastapi.delay(video_id)
+
+        return Response({"task_id": task.id})

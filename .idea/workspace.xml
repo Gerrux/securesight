@@ -7,25 +7,87 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ad79da47-6833-47fb-b0dc-b8c95b0776a5" name="Changes" comment="Added video player">
-      <change afterPath="$PROJECT_DIR$/frontend/src/assets/images/logo_dark.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/assets/images/logo_light.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/pages/Clips.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/styles/development.css" afterDir="false" />
+    <list default="true" id="ad79da47-6833-47fb-b0dc-b8c95b0776a5" name="Changes" comment="Updating component styles. Added a logo and a page in development">
+      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/nginx.conf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/Log.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/pages/Incidents.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/styles/log.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservice/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservice/app/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservice/app/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservice/app/routes.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservice/app/src/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservice/app/src/_init_paths.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservice/app/src/configs/infer_trtpose_deepsort_dnn.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservice/app/src/lib/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservice/app/src/lib/action_classifier/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservice/app/src/lib/action_classifier/dnn/classifier.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservice/app/src/lib/action_classifier/dnn/feature_procs.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservice/app/src/lib/pose_estimation/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservice/app/src/lib/pose_estimation/trtpose/trtpose.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservice/app/src/lib/tracker/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservice/app/src/lib/tracker/deepsort/datasets/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservice/app/src/lib/tracker/deepsort/datasets/basedataset.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservice/app/src/lib/tracker/deepsort/datasets/market.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservice/app/src/lib/tracker/deepsort/datasets/siamese_triplet.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservice/app/src/lib/tracker/deepsort/deepsort.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservice/app/src/lib/tracker/deepsort/get_reid.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservice/app/src/lib/tracker/deepsort/models/mudeep.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservice/app/src/lib/tracker/deepsort/models/osnet.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservice/app/src/lib/tracker/deepsort/models/siamese_net.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservice/app/src/lib/tracker/deepsort/models/wide_resnet.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservice/app/src/lib/tracker/deepsort/reid_feature_extractor.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservice/app/src/lib/tracker/deepsort/sort/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservice/app/src/lib/tracker/deepsort/sort/detection.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservice/app/src/lib/tracker/deepsort/sort/iou_matching.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservice/app/src/lib/tracker/deepsort/sort/kalman_filter.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservice/app/src/lib/tracker/deepsort/sort/linear_assignment.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservice/app/src/lib/tracker/deepsort/sort/nn_matching.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservice/app/src/lib/tracker/deepsort/sort/track.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservice/app/src/lib/tracker/deepsort/sort/tracker.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservice/app/src/lib/tracker/deepsort/tracker_utils.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservice/app/src/lib/tracker/loss.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservice/app/src/lib/tracker/runner.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservice/app/src/lib/tracker/trainer.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservice/app/src/lib/utils/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservice/app/src/lib/utils/annotation.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservice/app/src/lib/utils/commons.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservice/app/src/lib/utils/config.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservice/app/src/lib/utils/drawer.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservice/app/src/lib/utils/rosbag_reader.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservice/app/src/lib/utils/skeletons_io.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservice/app/src/lib/utils/utils.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservice/app/src/lib/utils/video.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservice/app/src/video_processing.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservice/app/src/weights/classifier/dnn/action_classifier3.pt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservice/app/src/weights/classifier/dnn/pca.pkl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservice/app/src/weights/pose_estimation/trtpose/.gitkeep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservice/app/src/weights/pose_estimation/trtpose/densenet121_baseline_att_256x256_B_epoch_160_256x256.trt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservice/app/src/weights/tracker/deepsort/.gitkeep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservice/app/src/weights/tracker/deepsort/siamese_mars.onnx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservice/app/src/weights/tracker/deepsort/siamese_mars.pth" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservice/app/src/weights/tracker/deepsort/siamese_mars.trt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservice/requirements.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/public/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/favicon.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/Layout/Background.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Layout/Background.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/Sidebar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Sidebar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authapi/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/authapi/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authapi/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/authapi/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Dashboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Dashboard.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/VideoList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/VideoList.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/VideoUploadForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/VideoUploadForm.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/index.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/pages/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Main.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Register.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Register.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/pages/VideoDetail.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/VideoDetail.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Videos.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Videos.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/routes/AppRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/routes/AppRoutes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/styles/auth.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/styles/auth.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/styles/sidebar.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/styles/sidebar.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/styles/video_detail.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/styles/video_detail.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/securesight/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/securesight/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/videoanalytics/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/videoanalytics/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/videoanalytics/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/videoanalytics/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/videoanalytics/tasks.py" beforeDir="false" afterPath="$PROJECT_DIR$/videoanalytics/tasks.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/videoanalytics/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/videoanalytics/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/videoanalytics/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/videoanalytics/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,11 +100,11 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JSX File" />
         <option value="Python Script" />
-        <option value="Dockerfile" />
-        <option value="JavaScript File" />
+        <option value="JSX File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
+        <option value="Dockerfile" />
       </list>
     </option>
   </component>
@@ -64,38 +126,39 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Django Server.securesight.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.Dockerfile.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/kalin/PycharmProjects/securesight/frontend/src/styles&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;aDefault&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;settings.space&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\PyCharm 2023.3.2\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Django Server.securesight.executor": "Run",
+    "Docker.Dockerfile.executor": "Run",
+    "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Users/kalin/PycharmProjects/securesight/microservice",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "run.code.analysis.last.selected.profile": "aDefault",
+    "settings.editor.selected.configurable": "settings.space",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\PyCharm 2023.3.2\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\kalin\PycharmProjects\securesight\microservice" />
       <recent name="C:\Users\kalin\PycharmProjects\securesight\frontend\src\styles" />
       <recent name="C:\Users\kalin\PycharmProjects\securesight\users" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\kalin\PycharmProjects\securesight\microservice" />
+      <recent name="C:\Users\kalin\PycharmProjects\securesight\backend" />
       <recent name="C:\Users\kalin\PycharmProjects\securesight\frontend\src\assets\images" />
       <recent name="C:\Users\kalin\PycharmProjects\securesight\frontend\public" />
       <recent name="C:\Users\kalin\PycharmProjects\securesight\frontend\src\routes" />
-      <recent name="C:\Users\kalin\PycharmProjects\securesight\frontend\src" />
-      <recent name="C:\Users\kalin\PycharmProjects\securesight\securesight" />
     </key>
   </component>
   <component name="RunManager" selected="Docker.Dockerfile">
@@ -182,7 +245,13 @@
       <workItem from="1709818114431" duration="22875000" />
       <workItem from="1709976424677" duration="13341000" />
       <workItem from="1710075852951" duration="35303000" />
-      <workItem from="1710183930270" duration="5975000" />
+      <workItem from="1710183930270" duration="9287000" />
+      <workItem from="1710199217807" duration="1133000" />
+      <workItem from="1710228877916" duration="597000" />
+      <workItem from="1710230269896" duration="1503000" />
+      <workItem from="1710235527146" duration="3521000" />
+      <workItem from="1710319937228" duration="3214000" />
+      <workItem from="1710368219732" duration="16671000" />
     </task>
     <task id="LOCAL-00001" summary="Start project">
       <option name="closed" value="true" />
@@ -224,7 +293,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710163745687</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Updating component styles. Added a logo and a page in development">
+      <option name="closed" value="true" />
+      <created>1710190242750</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1710190242750</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -247,7 +324,8 @@
     <MESSAGE value="Fixed themeMode bug" />
     <MESSAGE value="Added Video List and system upload videos" />
     <MESSAGE value="Added video player" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added video player" />
+    <MESSAGE value="Updating component styles. Added a logo and a page in development" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updating component styles. Added a logo and a page in development" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -259,6 +337,16 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/frontend/src/App.js</url>
           <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/frontend/src/components/Sidebar.jsx</url>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/videoanalytics/views.py</url>
+          <line>1</line>
+          <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

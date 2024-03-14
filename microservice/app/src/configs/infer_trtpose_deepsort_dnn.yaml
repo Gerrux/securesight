@@ -1,0 +1,46 @@
+weight_root: &weight_root app\src\weights
+
+# for pose estimation
+POSE:
+  name: trtpose
+  size: 256 # height, width
+  backbone: densenet121
+  model_path:
+    - *weight_root
+    - pose_estimation
+    - trtpose
+    - densenet121_baseline_att_256x256_B_epoch_160.pth # change if you convert tensorrt model
+  ## below settings are needed to filter bad(fewer) person keypoints
+  min_total_joints: 5
+  min_leg_joints: 1
+  include_head: True
+
+# for Tracker
+TRACKER:
+  name: "deepsort"
+  max_dist: 0.2 #0.15
+  max_iou_distance: 0.7 # 0.6
+  max_age: 70 #70
+  n_init: 6 # 5
+  nn_budget: 100
+  ## reid config
+  dataset_name: 'mars' #[market1501, mars]
+  reid_name: "siamesenet" # [wideresnet, siamesenet]
+  model_path:
+    - *weight_root
+    - tracker
+    - deepsort
+    - siamese_mars.trt # wide_residual_market1501, siamese_market1501
+
+# for action action_classifier
+CLASSIFIER:
+  ## custom model
+  name: "dnn"
+  classes: ['stand', 'walk', 'run', 'jump', 'sit', 'squat', 'kick', 'punch', 'wave'] ## change with your custom classes
+  window_size: 5 # 5
+  threshold: 0.5
+  model_path:
+     - *weight_root
+     - classifier
+     - dnn
+     - action_classifier3.pt # action_classifier

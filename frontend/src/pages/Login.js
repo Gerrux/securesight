@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {Link, useNavigate} from 'react-router-dom';
 import {useAuth} from '../auth/AuthProvider';
 import ApiClient from '../ApiClient';
-import {Alert, Button, Form} from 'react-bootstrap';
+import {Alert, Button, Form, Toast, ToastContainer} from 'react-bootstrap';
 import Background from '../components/Layout/Background';
 import { ReactComponent as LogoLightSvg } from '../assets/images/logo_light.svg';
 import '../styles/auth.css';
@@ -24,6 +24,12 @@ const Login = () => {
         }
     }, [navigate]);
 
+    const showErrorToast = (message) => {
+      setError(message);
+      setTimeout(() => {
+        setError(null);
+      }, 5000);
+    };
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
@@ -35,7 +41,13 @@ const Login = () => {
             navigate('/');
         } catch (error) {
             console.error(error);
-            setError('Invalid username or password');
+            if (error.message === 'Network Error' && error.request.status === 0) {
+                showErrorToast('Сервер недоступен. Пожалуйста, попробуйте позже.');
+            } else if (error.response && error.response.status === 500) {
+                showErrorToast('Сервер недоступен. Пожалуйста, попробуйте позже.');
+            } else {
+                showErrorToast('Неверное имя пользователя или пароль');
+            }
         }
     };
 
@@ -47,7 +59,6 @@ const Login = () => {
                     <h1 className="logo-text">SecureSight</h1>
                 </div>
                 <h2 className="text-center mb-4">Вход</h2>
-                {error && <Alert variant="danger">{error}</Alert>}
                 <Form.Group controlId="username" className="mb-2">
                     <Form.Label>Никнейм:</Form.Label>
                     <Form.Control
@@ -73,6 +84,16 @@ const Login = () => {
                     У вас нет аккаунта? <Link to="/register">Регистрация</Link>
                 </div>
             </Form>
+            <ToastContainer position={'top-center'} className="p-3">
+              {error && (
+                <Toast onClose={() => setError(null)} dismissible bg={'danger'}>
+                  <Toast.Header>
+                    <strong className="mr-auto">Ошибка</strong>
+                  </Toast.Header>
+                  <Toast.Body>{error}</Toast.Body>
+                </Toast>
+              )}
+            </ToastContainer>
         </Background>
     );
 };

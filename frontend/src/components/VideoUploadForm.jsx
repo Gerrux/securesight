@@ -9,14 +9,14 @@ const VideoUploadForm = ({onClose}) => {
     const {currentMode} = useStateContext();
     const [selectedFile, setSelectedFile] = useState(null);
     const [title, setTitle] = useState('');
-    const [previewUrl, setPreviewUrl] = useState(null);
+    // const [previewUrl, setPreviewUrl] = useState(null);
     const [showToast, setShowToast] = useState(false);
     const [toastMessage, setToastMessage] = useState('');
 
     const handleFileChange = (event) => {
         const file = event.target.files[0];
         setSelectedFile(file);
-        generatePreview(file);
+        // generatePreview(file);
         setTitle(file.name);
     };
 
@@ -24,10 +24,10 @@ const VideoUploadForm = ({onClose}) => {
         setTitle(event.target.value);
     };
 
-    const generatePreview = (file) => {
-        const url = URL.createObjectURL(file);
-        setPreviewUrl(url);
-    };
+    // const generatePreview = (file) => {
+    //     const url = URL.createObjectURL(file);
+    //     setPreviewUrl(url);
+    // };
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -58,7 +58,7 @@ const VideoUploadForm = ({onClose}) => {
                 console.log(response.data);
                 setSelectedFile(null);
                 setTitle('');
-                setPreviewUrl(null);
+                // setPreviewUrl(null);
                 setToastMessage('Video uploaded successfully');
                 setShowToast(true);
                 if (onClose) {
@@ -88,14 +88,14 @@ const VideoUploadForm = ({onClose}) => {
                         <Form.Control type="file" id="video" onChange={handleFileChange}/>
                     </Col>
                 </Row>
-                {previewUrl && (
-                    <Row className="mb-3">
-                        <Col>
-                            <img src={previewUrl} alt="Video Preview" width="100%" height="auto"/>
-                        </Col>
-                    </Row>
-                )}
-                <Button type="submit">Upload</Button>
+                {/*{previewUrl && (*/}
+                {/*    <Row className="mb-3">*/}
+                {/*        <Col>*/}
+                {/*            <img src={previewUrl} alt="Video Preview" width="100%" height="auto"/>*/}
+                {/*        </Col>*/}
+                {/*    </Row>*/}
+                {/*)}*/}
+                <Button type="submit">Загрузить</Button>
             </Form>
             <Toast onClose={() => setShowToast(false)} show={showToast} delay={3000} autohide>
                 <Toast.Header>

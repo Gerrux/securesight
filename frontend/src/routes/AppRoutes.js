@@ -6,6 +6,7 @@ import Main from '../pages/Main';
 import Videos from '../pages/Videos';
 import VideoDetail from '../pages/VideoDetail'
 import Clips from '../pages/Clips'
+import Incidents from '../pages/Incidents'
 import PrivateRoute from "./PrivateRoute";
 
 
@@ -37,8 +38,11 @@ const AppRoutes = () => {
         {
           path: '/clips',
           element: <Clips />
+        },
+        {
+          path: '/incidents',
+          element: <Incidents />
         }
-
       ]
     }
   ]);

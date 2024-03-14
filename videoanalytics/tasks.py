@@ -1,7 +1,8 @@
+import json
 import os
 import subprocess
 from time import sleep
-
+import requests
 from django.conf import settings
 from django.core.files.base import ContentFile
 
@@ -50,6 +51,7 @@ def convert_video_to_hls(video_id):
     sleep(1)
     video = Video.objects.get(id=video_id)
     video_path = video.file.path
+    print(video_path)
     output_path = os.path.splitext(video_path)[0]
 
     # Разрешения для различных версий видео
@@ -77,3 +79,30 @@ def convert_video_to_hls(video_id):
     video.processed = True
     video.task_id = None
     video.save()
+
+
+@app.task
+def send_video_to_fastapi(video_id):
+    from videoanalytics.models import Video
+    sleep(1)
+    video = Video.objects.get(id=video_id)
+    video_file_path = video.file.path
+    with open(video_file_path, 'rb') as video_file:
+        fastapi_url = f'{settings.FASTAPI_URL}/process_video'
+        files = {'file': (video.file.name, video_file)}
+        response = requests.post(fastapi_url, files=files)
+
+    if response.status_code != 200:
+        return {"error": "Failed to send video to FastAPI backend for processing."}
+
+    processed_video = response.content
+    log = json.loads(response.headers['Log'])
+
+    # Save the processed video and log to the Video model
+    video.file = ContentFile(processed_video, name=f'ai_{video.slug}.mp4')
+    video.ai_processed = True
+    video.log = log
+    video.save()
+
+    convert_video_to_hls(video_id)
+    return {"video_id": video.id}

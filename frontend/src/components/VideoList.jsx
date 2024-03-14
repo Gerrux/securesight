@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import ApiClient from '../ApiClient';
 import {Button, Card, Col, ListGroup, Modal, Row, Spinner} from 'react-bootstrap';
-import {FaCheckCircle, FaSyncAlt, FaTrashAlt} from 'react-icons/fa';
+import {FaCheckCircle, FaRobot, FaSyncAlt, FaTrashAlt} from 'react-icons/fa';
 import '../styles/video_list.css';
 
 const VideoList = () => {
@@ -47,18 +47,18 @@ const VideoList = () => {
         }
     };
 
-    const handleStartProcessing = async (slug) => {
+    const handleStartAIProcessing = async (slug) => {
         try {
-            await ApiClient.post(`/videos/${slug}/process/`);
-            setVideos(
-                videos.map((video) =>
-                    video.slug === slug ? {...video, processed: true} : video
-                )
-            );
+          await ApiClient.post(`/videos/${slug}/ai_process/`);
+          setVideos(
+            videos.map((video) =>
+              video.slug === slug ? { ...video, ai_processed: true } : video
+            )
+          );
         } catch (error) {
-            console.error(error);
+          console.error(error);
         }
-    };
+      };
 
     const handleOpenModal = (slug) => {
         setSelectedVideoId(slug);
@@ -73,7 +73,7 @@ const VideoList = () => {
         return (
             <div className="d-flex justify-content-center align-items-center vh-100">
                 <Spinner animation="border" role="status">
-                    <span className="visually-hidden">Loading...</span>
+                    <span className="visually-hidden">Загрузка...</span>
                 </Spinner>
             </div>
         );
@@ -112,10 +112,28 @@ const VideoList = () => {
                                                 {video.processed ? (
                                                     <FaCheckCircle className="mr-2" color="green"/>
                                                 ) : (
-                                                    <FaSyncAlt className="mr-2" color="orange"
-                                                                  onClick={() => handleStartProcessing(video.slug)}/>
+                                                    <FaSyncAlt className="mr-2" color="orange"/>
                                                 )}
-                                                <span className='d-block mx-2'>Processed</span>
+                                                <span className='d-block mx-2'>Обработано</span>
+                                            </ListGroup.Item>
+                                            <ListGroup.Item className="d-flex align-items-center">
+                                                {video.ai_processed ? (
+                                                    <FaRobot className="" color="green" />
+                                                ) : (
+                                                    <FaRobot className="mr-2" color="red" />
+                                                )}
+                                                <span className="d-block mx-2">Обработано AI</span>
+                                                {video.ai_processed ? (
+                                                <></>
+                                                    ) : (<Button
+                                                      variant="success"
+                                                      size="sm"
+                                                      onClick={() => handleStartAIProcessing(video.slug)}
+                                                      className="ml-2"
+                                                    >
+                                                      AI Start
+                                                </Button>)
+                                                }
                                             </ListGroup.Item>
                                             <ListGroup.Item className="text-center video-list-uploaded-at">
                                                 Загружено: {formatDate(video.uploaded_at)}

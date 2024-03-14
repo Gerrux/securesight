@@ -30,11 +30,13 @@ class Video(models.Model):
     file = models.FileField(upload_to='videos/',
                             validators=[FileExtensionValidator(allowed_extensions=['mp4', 'avi', 'mkv'])])
     processed = models.BooleanField(default=False)
+    ai_processed = models.BooleanField(default=False)
     uploaded_at = models.DateTimeField(auto_now_add=True)
     uploaded_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     thumbnail = models.ImageField(upload_to='videos/thumbnails/', blank=True)
     slug = models.CharField(max_length=11, unique=True)
     video_versions = models.JSONField(default=dict, blank=True)
+    log = models.JSONField(default=dict, blank=True)
     task_id = models.CharField(max_length=255, blank=True, null=True)
 
     def save(self, *args, **kwargs):
