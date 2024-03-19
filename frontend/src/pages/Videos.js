@@ -24,11 +24,11 @@ const Videos = () => {
     }, []);
 
     return (
-        <Container fluid className={`d-flex vh-100 p-0 ${currentMode === 'Dark' ? 'main-dark' : ''}`}>
+        <Container fluid className={`overflow-y-hidden d-flex vh-100 p-0 ${currentMode === 'Dark' ? 'main-dark' : ''}`}>
             <Sidebar handleLogout/>
             <Container fluid className="main-container d-flex p-0 flex-column">
                 <Header handleToggleForm={handleToggleForm} showForm={showForm}/>
-                <Container className="main d-flex flex-column align-items-center justify-content-center overflow-x-hidden ">
+                <Container className="main d-flex flex-column align-items-center justify-content-center">
                     <div className={`container ${showForm ? 'fade-out' : 'fade-in'} ${showForm ? 'd-none' : ''}`}>
                         <VideoList />
                     </div>

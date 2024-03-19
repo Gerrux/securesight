@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import { Scrollbars } from 'react-custom-scrollbars-2';
 import ApiClient from '../ApiClient';
 import {Button, Card, Col, ListGroup, Modal, OverlayTrigger, Row, Spinner, Tooltip} from 'react-bootstrap';
@@ -11,18 +11,22 @@ const VideoList = () => {
     const [showModal, setShowModal] = useState(false);
     const [selectedVideoId, setSelectedVideoId] = useState(null);
     const [loading, setLoading] = useState(true);
+    const loadingRef = useRef(null);
 
     useEffect(() => {
         const fetchVideos = async () => {
-            try {
-                setLoading(true);
-                const response = await ApiClient.get('/videos/');
-                setVideos(response.data);
-            } catch (error) {
-                console.error(error);
-            } finally {
-                setLoading(false);
+          try {
+            setLoading(true);
+            const response = await ApiClient.get('/videos/');
+            setVideos(response.data);
+          } catch (error) {
+            console.error(error);
+          } finally {
+            setLoading(false);
+            if (loadingRef.current) {
+              loadingRef.current.classList.add('fade-out');
             }
+          }
         };
 
         fetchVideos();
@@ -63,16 +67,16 @@ const VideoList = () => {
 
     if (loading) {
         return (
-            <div className="d-flex justify-content-center align-items-center vh-100">
-                <Spinner animation="border" role="status">
-                    <span className="visually-hidden">Загрузка...</span>
-                </Spinner>
-            </div>
+          <div className="d-flex justify-content-center align-items-center vh-100">
+            <Spinner className="loading-spinner" ref={loadingRef} animation="border" role="status">
+              <span className="visually-hidden">Загрузка...</span>
+            </Spinner>
+          </div>
         );
     }
 
     return (
-        <div className="mt-5">
+        <div className="fade-in">
             <Row className="mb-4">
               <Col>
                 <h1 className="video-list-title">

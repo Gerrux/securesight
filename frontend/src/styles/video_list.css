@@ -1,3 +1,13 @@
+.loading-spinner {
+  opacity: 1;
+  transition: opacity 0.3s ease-out;
+}
+
+.loading-spinner.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
 .no-videos-message {
     font-size: 1.2rem;
     color: #6c757d;
