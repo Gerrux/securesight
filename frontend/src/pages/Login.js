@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {Link, useNavigate} from 'react-router-dom';
 import {useAuth} from '../auth/AuthProvider';
 import ApiClient from '../ApiClient';
-import {Alert, Button, Form, Toast, ToastContainer} from 'react-bootstrap';
+import {Button, Form, Toast, ToastContainer} from 'react-bootstrap';
 import Background from '../components/Layout/Background';
 import { ReactComponent as LogoLightSvg } from '../assets/images/logo_light.svg';
 import '../styles/auth.css';

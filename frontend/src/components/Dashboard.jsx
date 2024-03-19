@@ -35,7 +35,7 @@ const Dashboard = () => {
     return (
         <Container fluid className="dashboard-container">
             <Row>
-                <Col md={3}>
+                <Col md={3} className="mb-3">
                     <Card className="dashboard-card">
                         <Card.Body>
                             <Card.Title>Количество видеороликов</Card.Title>
@@ -43,7 +43,7 @@ const Dashboard = () => {
                         </Card.Body>
                     </Card>
                 </Col>
-                <Col md={3}>
+                <Col md={3} className="mb-3">
                     <Card className="dashboard-card">
                         <Card.Body>
                             <Card.Title>Количество Пользователей</Card.Title>
@@ -51,7 +51,7 @@ const Dashboard = () => {
                         </Card.Body>
                     </Card>
                 </Col>
-                <Col md={3}>
+                <Col md={3} className="mb-3">
                     <Card className="dashboard-card">
                         <Card.Body>
                             <Card.Title>Количество обработанных видеороликов</Card.Title>
@@ -59,7 +59,7 @@ const Dashboard = () => {
                         </Card.Body>
                     </Card>
                 </Col>
-                <Col md={3}>
+                <Col md={3} className="mb-3">
                     <Card className="dashboard-card">
                         <Card.Body>
                             <Card.Title>Количество обработанных AI видеороликов</Card.Title>

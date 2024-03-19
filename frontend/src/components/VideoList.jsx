@@ -1,7 +1,9 @@
 import React, {useEffect, useState} from 'react';
+import { Scrollbars } from 'react-custom-scrollbars-2';
 import ApiClient from '../ApiClient';
-import {Button, Card, Col, ListGroup, Modal, Row, Spinner} from 'react-bootstrap';
-import {FaCheckCircle, FaRobot, FaSyncAlt, FaTrashAlt} from 'react-icons/fa';
+import {Button, Card, Col, ListGroup, Modal, OverlayTrigger, Row, Spinner, Tooltip} from 'react-bootstrap';
+import {FaCheckCircle, FaPlay, FaRobot, FaSyncAlt, FaTrashAlt} from 'react-icons/fa';
+import formatDateString from '../utils/formatDate';
 import '../styles/video_list.css';
 
 const VideoList = () => {
@@ -26,16 +28,6 @@ const VideoList = () => {
         fetchVideos();
     }, []);
 
-    const formatDate = (dateString) => {
-        const date = new Date(dateString);
-        return date.toLocaleDateString('ru-RU', {
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric',
-            hour: '2-digit',
-            minute: '2-digit',
-        });
-    };
 
     const handleDelete = async (slug) => {
         try {
@@ -80,7 +72,14 @@ const VideoList = () => {
     }
 
     return (
-        <div>
+        <div className="mt-5">
+            <Row className="mb-4">
+              <Col>
+                <h1 className="video-list-title">
+                  Загружено видеороликов: {videos.length}
+                </h1>
+              </Col>
+            </Row>
             <Row>
                 <Col>
                     {videos.length === 0 && !loading && (
@@ -88,41 +87,69 @@ const VideoList = () => {
                             <p>Пока что нет загруженных видеороликов.</p>
                         </div>
                     )}
+                    <Scrollbars style={{ height: 800, color: "blue"}} autoHide>
                     {videos.map((video) => (
-                        <Card key={video.id} className="mb-4 video-list-card">
+                        <Card key={video.id} className="mb-4 video-list-card mx-2">
                             <Row className="align-items-center">
                                 <Col md="auto" className="mx-3">
-                                    <Card.Img
-                                        variant="top"
-                                        className="video-list-thumbnail"
-                                        src={video.thumbnail ? `http://localhost:8000${video.thumbnail}` : `http://localhost:8000/media/no_thumbnail.png`}
-                                        onClick={() => (window.location.href = `/watch/${video.slug}/`)}
-                                    />
+                                    <OverlayTrigger
+                                        placement="top"
+                                        overlay={<Tooltip id={`tooltip-bottom`}>Play Video</Tooltip>}
+                                    >
+                                        <div className="thumbnail-container" onClick={() => (window.location.href = `/watch/${video.slug}/`)}>
+                                            <Card.Img
+                                                variant="top"
+                                                className="video-list-thumbnail rounded"
+                                                src={video.thumbnail ? `http://localhost:8000${video.thumbnail}` : `http://localhost:8000/media/no_thumbnail.png`}
+                                            />
+                                            <div className="play-icon">
+                                                <FaPlay />
+                                            </div>
+                                        </div>
+                                    </OverlayTrigger>
                                 </Col>
                                 <Col>
                                     <Card.Body>
                                         <Card.Title
-                                            className="video-list-title"
+                                            className="video-title"
                                             onClick={() => (window.location.href = `/watch/${video.slug}/`)}
                                         >
                                             {video.title}
                                         </Card.Title>
                                         <ListGroup horizontal className="justify-content-between">
-                                            <ListGroup.Item className="d-flex align-items-center">
-                                                {video.processed ? (
-                                                    <FaCheckCircle className="mr-2" color="green"/>
-                                                ) : (
-                                                    <FaSyncAlt className="mr-2" color="orange"/>
-                                                )}
-                                                <span className='d-block mx-2'>Обработано</span>
+                                            <ListGroup.Item className="video-list-uploaded-at border-0 px-0">
+                                                {formatDateString(video.uploaded_at)}
                                             </ListGroup.Item>
-                                            <ListGroup.Item className="d-flex align-items-center">
+                                            <ListGroup.Item className="border-0 px-0">
+                                                <ListGroup horizontal className="justify-content-end">
+
+                                            <ListGroup.Item className="d-flex align-items-center border-0">
+                                                {video.processed ? (
+                                                        <>
+                                                            <FaCheckCircle className="mr-2" color="green"/>
+                                                            <span className='d-block mx-2'>Обработано</span>
+                                                        </>
+                                                    ) : (
+                                                        <>
+                                                            <FaSyncAlt className="mr-2" color="orange"/>
+                                                            <span className='d-block mx-2'>Обрабатывается</span>
+                                                        </>
+                                                    )}
+
+                                            </ListGroup.Item>
+                                            <ListGroup.Item className="d-flex align-items-center border-0">
                                                 {video.ai_processed ? (
-                                                    <FaRobot className="" color="green" />
+                                                    <>
+                                                        <FaRobot className="" color="green"/>
+                                                        <span className="d-block mx-2">Обработано AI</span>
+                                                    </>
                                                 ) : (
-                                                    <FaRobot className="mr-2" color="red" />
+                                                    <>
+                                                        <FaRobot className="mr-2" color="red"/>
+                                                        <span className="d-block mx-2">Необработано AI</span>
+                                                    </>
                                                 )}
-                                                <span className="d-block mx-2">Обработано AI</span>
+
                                                 {video.ai_processed ? (
                                                 <></>
                                                     ) : (<Button
@@ -135,10 +162,7 @@ const VideoList = () => {
                                                 </Button>)
                                                 }
                                             </ListGroup.Item>
-                                            <ListGroup.Item className="text-center video-list-uploaded-at">
-                                                Загружено: {formatDate(video.uploaded_at)}
-                                            </ListGroup.Item>
-                                            <ListGroup.Item className="d-flex justify-content-end">
+                                            <ListGroup.Item className="d-flex justify-content-end border-0">
                                                 <Button
                                                     variant="danger"
                                                     size="sm"
@@ -149,11 +173,14 @@ const VideoList = () => {
                                                 </Button>
                                             </ListGroup.Item>
                                         </ListGroup>
+                                            </ListGroup.Item>
+                                        </ListGroup>
                                     </Card.Body>
                                 </Col>
                             </Row>
                         </Card>
                     ))}
+                    </Scrollbars>
                 </Col>
             </Row>
 

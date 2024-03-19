@@ -1,0 +1,29 @@
+.custom-scrollbar {
+  position: relative;
+  overflow: hidden;
+  height: 80vh;
+}
+
+.custom-scrollbar .content {
+  width: 100%;
+  overflow-y: auto;
+}
+
+.custom-scrollbar .scrollbar {
+  width: 8px;
+  background-color: #ccc;
+  border-radius: 4px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.custom-scrollbar .thumb {
+  width: 8px;
+  background-color: #555;
+  border-radius: 4px;
+  position: absolute;
+  right: 0;
+  pointer-events: none;
+}

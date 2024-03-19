@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { ListGroup } from 'react-bootstrap';
 import '../styles/log.css';
+import {Scrollbars} from "react-custom-scrollbars-2";
 
 const Log = ({ log, videoRef }) => {
   const logRef = useRef(null);
@@ -41,7 +42,7 @@ const Log = ({ log, videoRef }) => {
         </div>
       </div>
   <ListGroup ref={logRef} className="log-container">
-
+  <Scrollbars style={{ height: 700 }} autoHide>
     {[...new Set(logData.map((entry) => entry.Timestamp))].map((timestamp, index) => {
       const entriesAtTimestamp = logData.filter((entry) => entry.Timestamp === timestamp);
       const formattedActions = entriesAtTimestamp.map((entry) => formatActions(entry.Actions));
@@ -49,7 +50,7 @@ const Log = ({ log, videoRef }) => {
           <React.Fragment key={index}>
             {formattedActions.some((actions) => actions.length > 0) && (
               <ListGroup.Item onClick={() => handleTimestampClick(timestamp)} className="log-item">
-                <span className="log-timestamp">Timestamp: {formatTimestamp(timestamp)}</span>
+                <span className="log-timestamp">Время: {formatTimestamp(timestamp)}</span>
                 <ListGroup className="log-actions">
                   {formattedActions.map((actions, i) => (
                     <ListGroup.Item key={i}>{actions}</ListGroup.Item>
@@ -60,6 +61,7 @@ const Log = ({ log, videoRef }) => {
           </React.Fragment>
         );
       })}
+    </Scrollbars>
     </ListGroup>
         </div>
   );

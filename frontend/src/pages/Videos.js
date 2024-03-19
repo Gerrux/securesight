@@ -28,7 +28,7 @@ const Videos = () => {
             <Sidebar handleLogout/>
             <Container fluid className="main-container d-flex p-0 flex-column">
                 <Header handleToggleForm={handleToggleForm} showForm={showForm}/>
-                <Container className="main d-flex flex-column align-items-center justify-content-center">
+                <Container className="main d-flex flex-column align-items-center justify-content-center overflow-x-hidden ">
                     <div className={`container ${showForm ? 'fade-out' : 'fade-in'} ${showForm ? 'd-none' : ''}`}>
                         <VideoList />
                     </div>

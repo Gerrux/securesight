@@ -27,8 +27,8 @@ const Sidebar = () => {
     };
 
     return (
-        <Navbar className={`sidebar ${activeMenu ? 'active' : ''} ${currentMode === 'Dark' ? 'sidebar-dark' : ''}`}>
-            <Navbar.Brand className='top d-flex align-items-center'>
+        <Navbar className={`sidebar ${activeMenu ? 'active' : ''} ${currentMode === 'Dark' ? 'sidebar-dark navbar-dark' : ''}`}>
+            <Navbar.Brand onClick={() => navigate('/')} className='top d-flex align-items-center'>
               {currentMode === 'Light' ? <LogoDarkSvg className='logo-svg-sidebar' /> : <LogoLightSvg className='logo-svg-sidebar' />}
               <span className={`logo-text-sidebar ${!activeMenu && 'd-none'} ${currentMode === 'Dark' ? 'text-light' : 'text-dark'}`}>SecureSight</span>
             </Navbar.Brand>
