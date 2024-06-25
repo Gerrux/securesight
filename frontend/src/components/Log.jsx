@@ -18,10 +18,10 @@ const Log = ({ log, videoRef }) => {
   };
 
   const formatActions = (actions) => {
-    const filteredActions = filter === 'All' ? actions : actions.filter(([action]) => ['punch', 'kick', 'run'].includes(action));
-    return filteredActions.filter((action) => action[1] !== 0).map(([action, probability], i) => (
+    const filteredActions = filter === 'All' ? actions : actions.filter((action) => ['box', 'kick', 'run', 'jump'].includes(action));
+    return filteredActions.filter((action) => action !== 0).map((action, i) => (
       <span key={i}>
-        {action}: {(probability * 100).toFixed(2)}%{i !== filteredActions.length - 1 && ', '}
+        {action}
       </span>
     ));
   };

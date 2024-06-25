@@ -13,16 +13,16 @@ const Dashboard = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const videoResponse = await ApiClient.get('/videos/count/');
+                const videoResponse = await ApiClient.get('/backvideos/count/');
                 setVideoCount(videoResponse.data.total_videos);
 
                 const userResponse = await ApiClient.get('/api/count/');
                 setUserCount(userResponse.data.total_users);
 
-                const processedResponse = await ApiClient.get('/videos/processed/count/');
+                const processedResponse = await ApiClient.get('/backvideos/processed/count/');
                 setProcessedCount(processedResponse.data.total_processed_videos);
 
-                const aiProcessedResponse = await ApiClient.get('/videos/ai_processed/count/');
+                const aiProcessedResponse = await ApiClient.get('/backvideos/ai_processed/count/');
                 setAiProcessedCount(aiProcessedResponse.data.total_ai_processed_videos);
             } catch (error) {
                 console.error(error);

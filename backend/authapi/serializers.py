@@ -2,7 +2,7 @@ from django.contrib.auth import get_user_model, authenticate
 from rest_framework import serializers
 from rest_framework_simplejwt.tokens import RefreshToken
 
-from authapi.validations import validate_username, validate_password, validate_email
+from .validations import validate_username, validate_password, validate_email
 
 UserModel = get_user_model()
 

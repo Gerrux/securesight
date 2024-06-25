@@ -17,7 +17,7 @@ const VideoList = () => {
         const fetchVideos = async () => {
           try {
             setLoading(true);
-            const response = await ApiClient.get('/videos/');
+            const response = await ApiClient.get('/backvideos/');
             setVideos(response.data);
           } catch (error) {
             console.error(error);
@@ -35,7 +35,7 @@ const VideoList = () => {
 
     const handleDelete = async (slug) => {
         try {
-            await ApiClient.delete(`/videos/${slug}/`);
+            await ApiClient.delete(`/backvideos/${slug}/`);
             setVideos(videos.filter((video) => video.slug !== slug));
             setShowModal(false);
         } catch (error) {
@@ -45,7 +45,7 @@ const VideoList = () => {
 
     const handleStartAIProcessing = async (slug) => {
         try {
-          await ApiClient.post(`/videos/${slug}/ai_process/`);
+          await ApiClient.post(`/backvideos/${slug}/ai_process/`);
           setVideos(
             videos.map((video) =>
               video.slug === slug ? { ...video, ai_processed: true } : video

@@ -1,33 +1,24 @@
 # Stage 1: Build the React app using Node.js and NPM
-FROM node:16 as build
-LABEL authors="kalin"
-WORKDIR /app
+FROM node:18-alpine as build
 
-# Clone the repository
-RUN git clone https://github.com/Gerrux/securesight.git
-
-# Change the working directory to the cloned repository's frontend folder
-WORKDIR /app/securesight/frontend
+WORKDIR /usr/src/app
 
 COPY package.json ./
 COPY package-lock.json ./
 
-RUN npm install
+RUN npm ci
 
-COPY . ./
-
-# Add a .env file for environment variables if needed
-COPY .env ./
+ADD ./public ./public
+ADD ./src ./src
 
 RUN npm run build
 
-# Stage 2: Serve the built app using NGINX
-FROM nginx:alpine
+FROM node:18-alpine
 
-COPY --from=build /app/securesight/frontend/build /usr/share/nginx/html
+WORKDIR /usr/src/app
 
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+COPY --from=build /usr/src/app/build .
 
-EXPOSE 80
+RUN npm install -g serve
 
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["serve", "-s", "-l", "3000"]

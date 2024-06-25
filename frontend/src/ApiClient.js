@@ -2,7 +2,7 @@ import axios from 'axios';
 import Cookies from "js-cookie";
 
 const ApiClient = axios.create({
-    baseURL: 'http://localhost:8000/',
+    baseURL: 'http://localhost:8080/',
     xsrfCookieName: 'csrftoken',
     xsrfHeaderName: 'X-CSRFToken',
     withCredentials: true,

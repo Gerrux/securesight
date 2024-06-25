@@ -1,0 +1,61 @@
+version: '3.9'
+
+services:
+  backend:
+    build: ./backend
+    container_name: dev-backend
+
+    expose:
+      - 8000
+    env_file:
+      - .env
+    volumes:
+      - ./backend/:/app
+      - static:/usr/src/app/static
+      - media:/usr/src/app/media
+    command: >
+      bash -c "celery --app securesight beat -l info & celery --app securesight worker -l info --pool=solo"
+    networks:
+      - securesight_network
+    depends_on:
+      - redis
+  frontend:
+    build: ./frontend
+    container_name: dev-frontend
+    restart: always
+    expose:
+      - 3000
+    networks:
+      - securesight_network
+    depends_on:
+      - backend
+  nginx:
+    build: ./nginx
+    container_name: dev-nginx
+    volumes:
+      - static:/home/src/app/static
+      - media:/home/src/app/media
+      - ./frontend/build:/usr/src/app/build
+    ports:
+      - "8080:80"
+    networks:
+      - securesight_network
+    depends_on:
+      - backend
+      - frontend
+  redis:
+    image: redis
+    container_name: dev-redis
+    ports:
+      - "6379:6379"
+
+volumes:
+  media:
+  static:
+
+networks:
+  securesight_network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.28.0.0/16

@@ -1,25 +1,24 @@
-import json
 import os
 
 from celery.result import AsyncResult
 from django.conf import settings
-import requests
-from django.core.files.base import ContentFile
-from django.http import HttpResponse, Http404
+from django.http import Http404
 from rest_framework import status
 from rest_framework.parsers import MultiPartParser, FormParser
-from rest_framework.permissions import IsAuthenticated, AllowAny
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework_simplejwt.authentication import JWTAuthentication
-from .tasks import send_video_to_fastapi, convert_video_to_hls
+
 from .models import Video
 from .serializers import VideoSerializer, VideoListSerializer
+from .tasks import send_video_to_fastapi
 
 
 class TotalVideosView(APIView):
     authentication_classes = [JWTAuthentication]
     permission_classes = [IsAuthenticated]
+
     def get(self, request):
         total_videos = Video.objects.count()
         return Response({'total_videos': total_videos})
@@ -28,6 +27,7 @@ class TotalVideosView(APIView):
 class TotalProcessedVideosView(APIView):
     authentication_classes = [JWTAuthentication]
     permission_classes = [IsAuthenticated]
+
     def get(self, request):
         total_processed_videos = Video.objects.filter(processed=True).count()
         return Response({'total_processed_videos': total_processed_videos})
@@ -36,6 +36,7 @@ class TotalProcessedVideosView(APIView):
 class TotalAIProcessedVideosView(APIView):
     authentication_classes = [JWTAuthentication]
     permission_classes = [IsAuthenticated]
+
     def get(self, request):
         total_ai_processed_videos = Video.objects.filter(ai_processed=True).count()
         return Response({'total_ai_processed_videos': total_ai_processed_videos})
@@ -82,7 +83,8 @@ class VideoDetailView(APIView):
             version = request.GET.get('version', '240p')
             # Проверьте, что запрашиваемая версия доступна для этого видео
             if version not in available_versions:
-                return Response({"error": f"Version {version} not available for this video."}, status=status.HTTP_400_BAD_REQUEST)
+                return Response({"error": f"Version {version} not available for this video."},
+                                status=status.HTTP_400_BAD_REQUEST)
 
             # Нормализуйте путь к файлу плейлиста HLS
             hls_path = os.path.normpath(video.video_versions[version]).replace('\\', '/')

@@ -46,7 +46,7 @@ def get_video_resolution(video_path):
 
 @app.task
 def convert_video_to_hls(video_id):
-    from videoanalytics.models import Video
+    from .models import Video
     # Путь к выходному файлу
     sleep(1)
     video = Video.objects.get(id=video_id)
@@ -83,7 +83,7 @@ def convert_video_to_hls(video_id):
 
 @app.task
 def send_video_to_fastapi(video_id):
-    from videoanalytics.models import Video
+    from .models import Video
     sleep(1)
     video = Video.objects.get(id=video_id)
     video_file_path = video.file.path

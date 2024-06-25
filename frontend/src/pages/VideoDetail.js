@@ -19,7 +19,7 @@ const VideoDetail = () => {
   useEffect(() => {
     const fetchVideo = async () => {
       try {
-        const response = await ApiClient.get(`/videos/${slug}/`);
+        const response = await ApiClient.get(`/backvideos/${slug}/`);
         setVideo(response.data.video);
         setHlsManifestUrl(response.data.hls_manifest_url);
       } catch (error) {
